@@ -172,20 +172,7 @@
 }
 
 .noble-ui-logo {
-  font-weight: 900;
-  font-size: 25px;
-  letter-spacing: -1px;
-  color: #031a61;
-  span {
-    color: theme-color(primary);
-    font-weight: 300;
-  }
-  &:hover {
-    color: #031a61;
-  }
-  &.logo-light {
-    color: $body-color;
-  }
+  image-rendering: url(../images/DepartmentEducationLogo.png);
 }
 
 .rtl {
