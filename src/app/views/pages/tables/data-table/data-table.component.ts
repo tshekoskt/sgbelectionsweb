@@ -15,4 +15,6 @@ export class DataTableComponent implements OnInit {
     const dataTable = new DataTable("#dataTableExample");
   }
 
+  
+
 }

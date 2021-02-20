@@ -15,7 +15,7 @@ export const MENU: MenuItem[] = [
     icon: 'home',
     link: '/tables/data-table'
   },
-  /*{
+  {
     label: 'Web Apps',
     isTitle: true
   },
@@ -235,7 +235,7 @@ export const MENU: MenuItem[] = [
         link: '/charts-graphs/chartjs',
       },
     ]
-  },*/
+  },
   {
     label: 'Tables',
     icon: 'layout',
@@ -254,7 +254,7 @@ export const MENU: MenuItem[] = [
       }
     ]
   },
-  /*{
+  {
     label: 'Icons',
     icon: 'smile',
     subItems: [
@@ -333,5 +333,5 @@ export const MENU: MenuItem[] = [
         link: '/error/500',
       },
     ]
-  },*/
+  },
 ];

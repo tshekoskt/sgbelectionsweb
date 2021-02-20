@@ -11,11 +11,16 @@ import { AppComponent } from './app.component';
 import { ErrorPageComponent } from './views/pages/error-page/error-page.component';
 
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { ElectionsOverviewComponent } from './views/pages/elections/elections-overview/elections-overview.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorPageComponent,
+    ElectionsOverviewComponent,
+
   ],
   imports: [
     BrowserModule,
