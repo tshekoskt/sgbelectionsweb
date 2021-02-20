@@ -13,7 +13,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'Elections',
     icon: 'home',
-    link: '/dashboard'
+    link: '/tables/data-table'
   },
   /*{
     label: 'Web Apps',
@@ -235,7 +235,7 @@ export const MENU: MenuItem[] = [
         link: '/charts-graphs/chartjs',
       },
     ]
-  },
+  },*/
   {
     label: 'Tables',
     icon: 'layout',
@@ -254,7 +254,7 @@ export const MENU: MenuItem[] = [
       }
     ]
   },
-  {
+  /*{
     label: 'Icons',
     icon: 'smile',
     subItems: [
