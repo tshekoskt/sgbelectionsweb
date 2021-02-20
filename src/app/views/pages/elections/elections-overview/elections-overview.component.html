@@ -1,138 +1,51 @@
 <h4 class="card-title text-primary">Elections</h4>
+
 <div class="row">
     <div class="col-md-12 stretch-card">
       <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-3 mt-6">
-                   <h6>Overview</h6>
-                    <br>
-                   <h6>Nominees</h6>
-                   <br>
-                   <h6>Voters Roll</h6>
-                   <br>
-                   <h6>Results</h6>
-                   <br>
-                   <h6>Communication</h6>
-                   <br>
-                   <h6>Queries</h6>
-                   <br>
-                   <h6>Disputes</h6>
-                   <br>
-                   <h6>Observer Feedback</h6>
+                <div class="col-5 col-md-3">
+                  <ul ngbNav #verticalNav="ngbNav" class="nav-tabs nav-tabs-vertical">
+                    <li [ngbNavItem]="1">
+                      <a ngbNavLink>Home</a>
+                      <ng-template ngbNavContent>
+                        <h6 class="mb-2">Home</h6>
+                        
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                      <a ngbNavLink>Profile</a>
+                      <ng-template ngbNavContent>
+                        <h6 class="mb-2">Profile</h6>
+                        <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                          farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                          ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3">
+                      <a ngbNavLink>Contact</a>
+                      <ng-template ngbNavContent>
+                        <h6 class="mb-2">Contact</h6>
+                        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
+                          Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
+                          Duis pharetra et nisl at faucibus.</p>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="4">
+                      <a ngbNavLink class="disabled">Disabled</a>
+                      <ng-template ngbNavContent>
+                        <h6 class="mb-2">Disabled content</h6>
+                        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
+                      </ng-template>
+                    </li>
+                  </ul>
                 </div>
-                <div class="col-8">
-                    <div class="table-responsive">
-                        <table id="dataTableExample" class="table">
-                          <thead>
-                            <tr>
-                              <th>School Name</th>
-                              <th>Election Date</th>
-                              <th>Transaction Date & Time</th>
-                              <th>Action</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>2011/04/25</td>
-                              <td>2011/04/25</td>
-                              <td><i class="mdi mdi-eye"><a  href="/election-overview" routerLinkActive="active">i</a></i></td>
-                            </tr>
-                          </tbody>
-                          <tfoot>
-                            <tr>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                            </tr>
-                          </tfoot>
-                        </table>
+                <div class="col-7 col-md-9">
+                  <div [ngbNavOutlet]="verticalNav" class="tab-content-vertical border p-3"></div>
                 </div>
-                <div class="row">
-                <div class="col-12 col-xl-12 stretch-card">
-                <div class="row flex-grow">
-                <div class="col-md-4 grid-margin stretch-card">
-                    <div class="card">
-                    <div class="card-body">
-                        <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
-
-                        <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
-                        <!-- </div> -->
-
-                        <div class="row">
-                        <div class="col-4 col-md-6 col-xl-5">
-                            <i class="mdi mdi-account" data-feather="check-square" appFeatherIcon></i>
-                        </div>
-                        <div class="col-8 col-md-6 col-xl-7 float-right">
-                            <h3 class="d-flex justify-content-end">5</h3>
-                            <h6 class="card-title mb-0 d-flex justify-content-end">Total</h6>
-                        </div>
-                        </div>
-
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-4 grid-margin stretch-card">
-                    <div class="card">
-                    <div class="card-body">
-                        <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
-
-                        <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
-                        <!-- </div> -->
-
-                        <div class="row">
-                        <div class="col-4 col-md-6 col-xl-5">
-                            <i class="mdi mdi-account-multiple" data-feather="calendar" appFeatherIcon></i>
-                        </div>
-                        <div class="col-8 col-md-6 col-xl-7 float-right">
-                            <h3 class="d-flex justify-content-end">3</h3>
-                            <h6 class="card-title mb-0 d-flex justify-content-end">Upcoming</h6>
-                        </div>
-                        </div>
-
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-4 grid-margin stretch-card">
-                    <div class="card">
-                    <div class="card-body">
-                        <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
-
-                        <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
-                        <!-- </div> -->
-
-                        <div class="row">
-                        <div class="col-4 col-md-6 col-xl-5">
-                            <i class="text-primary icon" data-feather="check" appFeatherIcon></i>
-                        </div>
-                        <div class="col-8 col-md-6 col-xl-7 float-right">
-                            <h3 class="d-flex justify-content-end">1</h3>
-                            <h6 class="card-title mb-0 d-flex justify-content-end">Closed</h6>
-                        </div>
-                        </div>
-
-                    </div>
-                    </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-xl-12 stretch-card">
-                    <div class="row flex-grow">
-                    <div class="col-md-4 grid-margin stretch-card">
-                        <div class="card">
-                            sdasda
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-            </div>        
+              </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
+     </div>
+   </div>
+</div>

@@ -12,6 +12,7 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ElectionsOverviewComponent } from './views/pages/elections/elections-overview/elections-overview.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -27,6 +28,7 @@ import { ElectionsOverviewComponent } from './views/pages/elections/elections-ov
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    NgbModule,
   ],
   providers: [
     AuthGuard,
