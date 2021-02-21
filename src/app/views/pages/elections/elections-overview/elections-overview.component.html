@@ -11,7 +11,128 @@
                       <a ngbNavLink>Overview</a>
                       <ng-template ngbNavContent>
                         <h6 class="mb-2">Overview</h6>
-                        
+                        <div class="table-responsive">
+                            <table id="dataTableExample" class="table">
+                              <thead>
+                                <tr>
+                                  <th>School Name</th>
+                                  <th>Election Date</th>
+                                  <th>Transaction Date & Time</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Tiger Nixon</td>
+                                  <td>2011/04/25</td>
+                                  <td>2011/04/25</td>
+                                  <td><i class="mdi mdi-eye"><a  href="/election-overview" routerLinkActive="active">i</a></i></td>
+                                </tr>
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                </tr>
+                              </tfoot>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-xl-12 stretch-card">
+                            <div class="row flex-grow">
+                            <div class="col-md-4 grid-margin stretch-card">
+                                <div class="card">
+                                <div class="card-body">
+                                    <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
+            
+                                    <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
+                                    <!-- </div> -->
+            
+                                    <div class="row">
+                                    <div class="col-4 col-md-6 col-xl-5">
+                                        <i class="mdi mdi-account" data-feather="check-square" appFeatherIcon></i>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-xl-7 float-right">
+                                        <h3 class="d-flex justify-content-end">5</h3>
+                                        <h6 class="card-title mb-0 d-flex justify-content-end">Nominees</h6>
+                                    </div>
+                                    </div>
+            
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 grid-margin stretch-card">
+                                <div class="card">
+                                <div class="card-body">
+                                    <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
+            
+                                    <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
+                                    <!-- </div> -->
+            
+                                    <div class="row">
+                                    <div class="col-4 col-md-6 col-xl-5">
+                                        <i class="mdi mdi-account-multiple" data-feather="calendar" appFeatherIcon></i>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-xl-7 float-right">
+                                        <h3 class="d-flex justify-content-end">3</h3>
+                                        <h6 class="card-title mb-0 d-flex justify-content-end">Voters</h6>
+                                    </div>
+                                    </div>
+            
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 grid-margin stretch-card">
+                                <div class="card">
+                                <div class="card-body">
+                                    <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
+            
+                                    <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
+                                    <!-- </div> -->
+            
+                                    <div class="row">
+                                    <div class="col-4 col-md-6 col-xl-5">
+                                        <i class="text-primary icon" data-feather="check" appFeatherIcon></i>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-xl-7 float-right">
+                                        <h3 class="d-flex justify-content-end">1</h3>
+                                        <h6 class="card-title mb-0 d-flex justify-content-end">Voters Cast</h6>
+                                    </div>
+                                    </div>
+            
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                          <div class="row">
+                            <div class="col-12 col-xl-12 stretch-card">
+                            <div class="row flex-grow">
+                              <div class="col-md-4 grid-margin stretch-card">
+                                  <div class="card">
+                                  <div class="card-body">
+                                    <div class="row center justify-content-center">
+                                      <h6>Top 5 Nominees</h6>
+                                      <br>
+                                      <ul class="list-group">
+                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
+                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
+                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
+                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
+                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                           
+                          </div>
                       </ng-template>
                     </li>
                     <li [ngbNavItem]="2">
