@@ -15,7 +15,7 @@ export const MENU: MenuItem[] = [
     icon: 'home',
     link: '/tables/data-table'
   },
-  {
+ /* {
     label: 'Web Apps',
     isTitle: true
   },
@@ -333,5 +333,5 @@ export const MENU: MenuItem[] = [
         link: '/error/500',
       },
     ]
-  },
+  },*/
 ];
