@@ -6,13 +6,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { ElectionsComponent } from './elections.component'
-import { ElectionsOverviewComponent } from './elections-overview/elections-overview.component'
+import { ElectionTableComponent } from './elections-table/election-table.component';
+import { ElectionsOverviewComponent } from './elections-overview/elections-overview.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ElectionsComponent,
     children: [
+      {
+        path: '',
+        redirectTo: '',
+        component: ElectionTableComponent,
+        pathMatch: 'full'
+      },
       {
         path: 'overview',
         component: ElectionsOverviewComponent
@@ -23,7 +30,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ElectionsComponent, ElectionsOverviewComponent],
+  declarations: [ElectionTableComponent, ElectionsOverviewComponent, ElectionsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

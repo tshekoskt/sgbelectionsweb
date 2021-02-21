@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { BaseComponent } from './views/layout/base/base.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { ErrorPageComponent } from './views/pages/error-page/error-page.component';
-import { ElectionsOverviewComponent } from './views/pages/_elections/elections-overview/elections-overview.component';
 
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
     component: BaseComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'election-overview', component: ElectionsOverviewComponent },
       {
         path: 'dashboard',
         loadChildren: () => import('./views/pages/_dashboard/dashboard.module').then(m => m.DashboardModule)
@@ -23,6 +21,8 @@ const routes: Routes = [
         path: 'elections',
         loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
       },
+
+    //===============================================================================================================//
       {
         path: 'apps',
         loadChildren: () => import('./views/pages/apps/apps.module').then(m => m.AppsModule)

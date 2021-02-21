@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';import { DataTable } from "simple-datatables";
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-elections',
-  templateUrl: './elections.component.html',
-  styleUrls: ['./elections.component.scss']
+  templateUrl: './elections.component.html'
 })
 export class ElectionsComponent implements OnInit {
 
@@ -11,7 +11,8 @@ export class ElectionsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const dataTable = new DataTable("#dataTableExample");
+
   }
+
 
 }
