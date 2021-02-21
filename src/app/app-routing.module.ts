@@ -8,7 +8,7 @@ import { ElectionsOverviewComponent } from './views/pages/elections/elections-ov
 
 const routes: Routes = [
   { path:'auth', loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule) },
-  
+
   {
     path: '',
     component: BaseComponent,
@@ -17,7 +17,11 @@ const routes: Routes = [
       { path: 'election-overview', component: ElectionsOverviewComponent },
       {
         path: 'dashboard',
-        loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./views/pages/_dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'elections',
+        loadChildren: () => import('./views/pages/elections/elections.module').then(m => m.ElectionsModule)
       },
       {
         path: 'apps',
@@ -55,11 +59,11 @@ const routes: Routes = [
         path: 'general',
         loadChildren: () => import('./views/pages/general/general.module').then(m => m.GeneralModule)
       },
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, 
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       // { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
-  { 
+  {
     path: 'error',
     component: ErrorPageComponent,
     data: {

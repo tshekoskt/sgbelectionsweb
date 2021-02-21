@@ -13,7 +13,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'Elections',
     icon: 'home',
-    link: '/tables/data-table'
+    link: '/elections'
   },
   {
     label: 'Web Apps',

@@ -13,6 +13,7 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ElectionsOverviewComponent } from './views/pages/elections/elections-overview/elections-overview.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { ElectionsComponent } from './elections/elections.component';
 
 
 
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     ErrorPageComponent,
-    ElectionsOverviewComponent,
+    ElectionsOverviewComponent
+    // ElectionsComponent,
 
   ],
   imports: [
