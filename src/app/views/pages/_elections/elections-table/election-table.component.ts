@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';import { DataTable } from "simple-datatables";
+import { Component, OnInit } from '@angular/core';
+import { DataTable } from "simple-datatables";
 
 @Component({
   selector: 'app-election-table',
