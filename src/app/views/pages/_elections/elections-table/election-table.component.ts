@@ -15,8 +15,4 @@ export class ElectionTableComponent implements OnInit {
     const dataTable = new DataTable("#dataTableExample");
   }
 
-  viewItem() {
-    //[('')];
-  }
-
 }
