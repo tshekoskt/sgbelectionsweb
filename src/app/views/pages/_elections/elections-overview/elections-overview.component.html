@@ -8,200 +8,285 @@
 <h4 class="card-title text-primary">Elections</h4>
 
 <div class="row">
-    <div class="col-md-12 stretch-card">
-      <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-5 col-md-3">
-                  <ul ngbNav #verticalNav="ngbNav" class="nav-tabs nav-tabs-vertical">
-                    <li [ngbNavItem]="1">
-                      <a ngbNavLink>Overview</a>
-                      <ng-template ngbNavContent>
-                        <h6 class="mb-2">Overview</h6>
-                        <div class="table-responsive">
-                            <table id="dataTableExample" class="table">
-                              <thead>
-                                <tr>
-                                  <th>School Name</th>
-                                  <th>Election Date</th>
-                                  <th>Transaction Date & Time</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Tiger Nixon</td>
-                                  <td>2011/04/25</td>
-                                  <td>2011/04/25</td>
-                                  <td><i class="mdi mdi-eye"><a  href="./elections/overview" routerLinkActive="active">i</a></i></td>
-                                </tr>
-                              </tbody>
-                              <tfoot>
-                                <tr>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                </tr>
-                              </tfoot>
-                            </table>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-xl-12 stretch-card">
-                            <div class="row flex-grow">
-                            <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
-                                <div class="card-body">
-                                    <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-3">
+            <ul ngbNav #verticalNav="ngbNav" class="nav-tabs nav-tabs-vertical">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>Overview</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Overview</h6>
+                  <div class="table-responsive">
+                    <table id="dataTableExample" class="table">
+                      <thead>
+                        <tr>
+                          <th>School Name</th>
+                          <th>Election Date</th>
+                          <th>Transaction Date & Time</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tiger Nixon</td>
+                          <td>2011/04/25</td>
+                          <td>2011/04/25</td>
+                          <td><a routerLink="./elections/overview" routerLinkActive="active"><i class="mdi mdi-eye text-dark"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-xl-12 stretch-card">
+                      <div class="row flex-grow">
+                        <div class="col-md-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
 
-                                    <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
-                                    <!-- </div> -->
+                              <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
+                              <!-- </div> -->
 
-                                    <div class="row">
-                                    <div class="col-4 col-md-6 col-xl-5">
-                                        <i class="mdi mdi-account" data-feather="check-square" appFeatherIcon></i>
-                                    </div>
-                                    <div class="col-8 col-md-6 col-xl-7 float-right">
-                                        <h3 class="d-flex justify-content-end">5</h3>
-                                        <h6 class="card-title mb-0 d-flex justify-content-end">Nominees</h6>
-                                    </div>
-                                    </div>
-
+                              <div class="row">
+                                <div class="col-4 col-md-6 col-xl-5">
+                                  <i class="text-primary icon" data-feather="check-square" appFeatherIcon></i>
                                 </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
-                                <div class="card-body">
-                                    <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
-
-                                    <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
-                                    <!-- </div> -->
-
-                                    <div class="row">
-                                    <div class="col-4 col-md-6 col-xl-5">
-                                        <i class="mdi mdi-account-multiple" data-feather="calendar" appFeatherIcon></i>
-                                    </div>
-                                    <div class="col-8 col-md-6 col-xl-7 float-right">
-                                        <h3 class="d-flex justify-content-end">3</h3>
-                                        <h6 class="card-title mb-0 d-flex justify-content-end">Voters</h6>
-                                    </div>
-                                    </div>
-
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
-                                <div class="card-body">
-                                    <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
-
-                                    <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
-                                    <!-- </div> -->
-
-                                    <div class="row">
-                                    <div class="col-4 col-md-6 col-xl-5">
-                                        <i class="text-primary icon" data-feather="check" appFeatherIcon></i>
-                                    </div>
-                                    <div class="col-8 col-md-6 col-xl-7 float-right">
-                                        <h3 class="d-flex justify-content-end">1</h3>
-                                        <h6 class="card-title mb-0 d-flex justify-content-end">Voters Cast</h6>
-                                    </div>
-                                    </div>
-
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                          <div class="row">
-                            <div class="col-12 col-xl-12 stretch-card">
-                            <div class="row flex-grow">
-                              <div class="col-md-4 grid-margin stretch-card">
-                                  <div class="card">
-                                  <div class="card-body">
-                                    <div class="row center justify-content-center">
-                                      <h6>Top 5 Nominees</h6>
-                                      <br>
-                                      <ul class="list-group">
-                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
-                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
-                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
-                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
-                                        <li class="list-group-item">Dikeledi Letsoalo     0%</li>
-                                      </ul>
-                                    </div>
-
-                                  </div>
+                                <div class="col-8 col-md-6 col-xl-7 float-right">
+                                  <h3 class="d-flex justify-content-end">5</h3>
+                                  <h6 class="card-title mb-0 d-flex justify-content-end">Nominees</h6>
                                 </div>
                               </div>
+
                             </div>
                           </div>
+                        </div>
+                        <div class="col-md-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
 
+                              <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
+                              <!-- </div> -->
+
+                              <div class="row">
+                                <div class="col-4 col-md-6 col-xl-5">
+                                  <i class="text-primary icon" data-feather="calendar" appFeatherIcon></i>
+                                </div>
+                                <div class="col-8 col-md-6 col-xl-7 float-right">
+                                  <h3 class="d-flex justify-content-end">3</h3>
+                                  <h6 class="card-title mb-0 d-flex justify-content-end">Voters</h6>
+                                </div>
+                              </div>
+
+                            </div>
                           </div>
-                      </ng-template>
-                    </li>
-                    <li [ngbNavItem]="2">
-                      <a ngbNavLink>Nominees</a>
-                      <ng-template ngbNavContent>
-                        <h6 class="mb-2">Nominees</h6>
-                        <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-                          farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-                          ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
-                      </ng-template>
-                    </li>
-                    <li [ngbNavItem]="3">
-                      <a ngbNavLink>Voters Roll</a>
-                      <ng-template ngbNavContent>
-                        <h6 class="mb-2">Voters Roll</h6>
-                        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
-                          Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
-                          Duis pharetra et nisl at faucibus.</p>
-                      </ng-template>
-                    </li>
-                    <li [ngbNavItem]="4">
-                      <a ngbNavLink class="mb3">results</a>
-                      <ng-template ngbNavContent>
-                        <h6 class="mb-2">results</h6>
-                        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-                      </ng-template>
-                    </li>
-                    <li [ngbNavItem]="5">
-                        <a ngbNavLink class="mb3">Communication</a>
-                        <ng-template ngbNavContent>
-                          <h6 class="mb-2">Communication</h6>
-                          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-                        </ng-template>
-                      </li>
-                      <li [ngbNavItem]="6">
-                        <a ngbNavLink class="mb3">Queries</a>
-                        <ng-template ngbNavContent>
-                          <h6 class="mb-2">Queries</h6>
-                          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-                        </ng-template>
-                      </li>
-                      <li [ngbNavItem]="7">
-                        <a ngbNavLink class="mb3">Disputes</a>
-                        <ng-template ngbNavContent>
-                          <h6 class="mb-2">Disputes</h6>
-                          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-                        </ng-template>
-                      </li>
-                      <li [ngbNavItem]="8">
-                        <a ngbNavLink class="mb3">Observer Feedback</a>
-                        <ng-template ngbNavContent>
-                          <h6 class="mb-2">Observer Feedback</h6>
-                          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-                        </ng-template>
-                      </li>
-                  </ul>
-                </div>
-                <div class="col-7 col-md-9">
-                  <div [ngbNavOutlet]="verticalNav" class="tab-content-vertical border p-3"></div>
-                </div>
-              </div>
+                        </div>
+                        <div class="col-md-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <!-- <div class="d-flex justify-content-between align-items-baseline"> -->
+
+                              <!--mdi mdi-calendar-plus   mdi mdi-calendar-check   mdi mdi-calendar-blank   mdi mdi-marker-check calender_today date_range  how_to_vote  download_done   assignment_turned_in-->
+                              <!-- </div> -->
+
+                              <div class="row">
+                                <div class="col-4 col-md-6 col-xl-5">
+                                  <i class="text-primary icon" data-feather="check" appFeatherIcon></i>
+                                </div>
+                                <div class="col-8 col-md-6 col-xl-7 float-right">
+                                  <h3 class="d-flex justify-content-end">1</h3>
+                                  <h6 class="card-title mb-0 d-flex justify-content-end">Voters Cast</h6>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-xl-12 stretch-card">
+                      <div class="row flex-grow">
+                        <div class="col-md-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="row center justify-content-center">
+                                <h6>Top 5 Nominees</h6>
+                                <br>
+                                <ul class="list-group">
+                                  <li class="list-group-item">Dikeledi Letsoalo 0%</li>
+                                  <li class="list-group-item">Dikeledi Letsoalo 0%</li>
+                                  <li class="list-group-item">Dikeledi Letsoalo 0%</li>
+                                  <li class="list-group-item">Dikeledi Letsoalo 0%</li>
+                                  <li class="list-group-item">Dikeledi Letsoalo 0%</li>
+                                </ul>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Nominees</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Nominees</h6>
+                  <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip
+                    jean shorts
+                    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.
+                  </p>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>Voters Roll</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Voters Roll</h6>
+                  <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
+                    Nulla facilisi.
+                    Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
+                    congue et odio.
+                    Duis pharetra et nisl at faucibus.</p>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="4">
+                <a ngbNavLink class="mb3">results</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">results</h6>
+                  <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="5">
+                <a ngbNavLink class="mb3">Communication</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Communication</h6>
+                  <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="6">
+                <a ngbNavLink class="mb3">FAQ</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Frequently Asked Questions</h6>
+
+                  <div class="row">
+                    <!-- <div class="col-10">
+
+                      <quill-editor [(ngModel)]="htmlText" placeholder="Enter Text" [modules]="quillConfig"
+                        (onSelectionChanged)="onSelectionChanged($event)" (onContentChanged)="onContentChanged($event)">
+                      </quill-editor>
+                    </div> -->
+
+                    <div class="col-md-12">
+
+                      <br/>
+                      <div class="form-group col-10 ml-auto mr-auto">
+                        <label for="exampleFormControlTextarea1"><b>Question </b></label>
+                        <textarea class="form-control" id="question" placeholder="Type here" rows="5"></textarea>
+                        <br/>
+                        <div class="row">
+                          <button type="button" class="btn btn-primary submit ml-auto mr-auto">Submit</button>
+                        </div>
+                      </div>
+
+                      <ngb-accordion class="col-12" class="title_tab" [closeOthers]="true">
+                        <ngb-panel id="faq1" class="title_tab" title="Why is the moon sometimes out during the day?">
+                          <ng-template ngbPanelContent>
+                            <b>Answer: </b>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                            richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                            quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                            squid single-origin coffee nulla assumenda shoreditch et.
+
+
+                            <br/>
+                          <div class="form-group">
+                            <textarea class="form-control" id="answer" placeholder="Type here" rows="5"></textarea>
+                            <br/>
+                            <div class="row">
+                              <button type="button" class="btn btn-primary submit"><span class="mdi mdi-reply"> </span> Answer</button>
+                              &nbsp;&nbsp;&nbsp;
+                              <button type="button" class="btn btn-primary submit"><span class="mdi mdi-upload"></span> Escalate</button>
+                            </div>
+                          </div>
+                          </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="faq2" class="title_tab" title="Why is the sky blue?">
+                          <ng-template ngbPanelContent>
+                            <b>Answer: </b>
+
+                            <br/>
+                          <div class="form-group">
+                            <textarea class="form-control" id="answer" placeholder="Type here" rows="5"></textarea>
+                            <br/>
+                            <div class="row">
+                              <button type="button" class="btn btn-primary submit"><span class="mdi mdi-reply"> </span> Answer</button>
+                              &nbsp;&nbsp;&nbsp;
+                              <button type="button" class="btn btn-primary submit"><span class="mdi mdi-upload"></span> Escalate</button>
+                            </div>
+                          </div>
+                          </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="faq3" class="title_tab" title="Will we ever discover aliens?">
+                          <ng-template ngbPanelContent>
+                            <b>Answer: </b>
+
+
+                            <br/>
+                          <div class="form-group">
+                            <textarea class="form-control" id="answer" placeholder="Type here" rows="5"></textarea>
+                            <br/>
+                            <div class="row">
+                              <button type="button" class="btn btn-primary submit"><span class="mdi mdi-reply"> </span> Answer</button>
+                              &nbsp;&nbsp;&nbsp;
+                              <button type="button" class="btn btn-primary submit"><span class="mdi mdi-upload"></span> Escalate</button>
+                            </div>
+                          </div>
+                          </ng-template>
+
+                        </ngb-panel>
+                      </ngb-accordion>
+                    </div>
+                  </div>
+
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="7">
+                <a ngbNavLink class="mb3">Disputes</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Disputes</h6>
+                  <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="8">
+                <a ngbNavLink class="mb3">Observer Feedback</a>
+                <ng-template ngbNavContent>
+                  <h6 class="mb-2">Observer Feedback</h6>
+                  <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
+                </ng-template>
+              </li>
+            </ul>
+          </div>
+          <div class="col-7 col-md-9">
+            <div [ngbNavOutlet]="verticalNav" class="tab-content-vertical border p-3"></div>
+          </div>
         </div>
-     </div>
-   </div>
+      </div>
+    </div>
+  </div>
 </div>

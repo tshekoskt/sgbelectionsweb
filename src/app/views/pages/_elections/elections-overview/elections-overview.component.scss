@@ -1,0 +1,29 @@
+.title_tab {
+  background-color: gainsboro!important;
+}
+
+.accordion > .card .card-header {
+  background-color: gainsboro!important;
+}
+
+.accordion > .card .card-header .title_tab {
+  background-color: gainsboro!important;
+}
+
+.accordion {
+  >.card {
+    .card-header {
+      background-color: gainsboro!important;
+    }
+  }
+}
+
+.accordion {
+  >.card {
+    .card-header {
+      .title_tab {
+      background-color: gainsboro!important;
+      }
+    }
+  }
+}

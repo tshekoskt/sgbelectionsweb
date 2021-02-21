@@ -11,7 +11,14 @@ import { ElectionsOverviewComponent } from './elections-overview/elections-overv
 
 import { CodePreviewModule } from '../../partials/code-preview/code-preview.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+// ngx-quill
+import { QuillModule } from 'ngx-quill';
+
+// angular-archwizard
+import { ArchwizardModule } from 'angular-archwizard';
 
 import { FeahterIconModule } from '../../../core/feather-icon/feather-icon.module';
 
@@ -53,7 +60,11 @@ const routes: Routes = [
     NgbModule,
     PerfectScrollbarModule,
     FormsModule,
-    FeahterIconModule
+    FeahterIconModule,
+    ReactiveFormsModule,
+    FeahterIconModule,
+    QuillModule.forRoot(), // ngx-quill
+    ArchwizardModule, // angular-archwizard
   ],
   providers: [
     {
