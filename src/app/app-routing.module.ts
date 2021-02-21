@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BaseComponent } from './views/layout/base/base.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { ErrorPageComponent } from './views/pages/error-page/error-page.component';
-import { ElectionsOverviewComponent } from './views/pages/elections/elections-overview/elections-overview.component';
+import { ElectionsOverviewComponent } from './views/pages/_elections/elections-overview/elections-overview.component';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: 'elections',
-        loadChildren: () => import('./views/pages/elections/elections.module').then(m => m.ElectionsModule)
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
       },
       {
         path: 'apps',

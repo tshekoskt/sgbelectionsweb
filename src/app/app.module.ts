@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { ErrorPageComponent } from './views/pages/error-page/error-page.component';
 
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { ElectionsOverviewComponent } from './views/pages/elections/elections-overview/elections-overview.component';
+import { ElectionsOverviewComponent } from './views/pages/_elections/elections-overview/elections-overview.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { ElectionsComponent } from './elections/elections.component';
 

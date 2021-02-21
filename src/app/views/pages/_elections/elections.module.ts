@@ -5,18 +5,21 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-import { ElectionsComponent } from './elections/elections.component'
+import { ElectionsComponent } from './elections.component'
 import { ElectionsOverviewComponent } from './elections-overview/elections-overview.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: ElectionsComponent
-  },
-  {
-    path: 'overview',
-    component: ElectionsOverviewComponent
+    component: ElectionsComponent,
+    children: [
+      {
+        path: 'overview',
+        component: ElectionsOverviewComponent
+      }
+    ]
   }
+
 ]
 
 @NgModule({
