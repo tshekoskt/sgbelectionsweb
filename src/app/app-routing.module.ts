@@ -23,7 +23,11 @@ const routes: Routes = [
       },
       {
         path: 'documents',
-        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+        loadChildren: () => import('./views/pages/_documents/document-table/document-table.module').then(m => m.DocumentTableModule)
+      },
+      {
+        path: 'documents-audit',
+        loadChildren: () => import('./views/pages/_documents/document-audit/document-audit.module').then(m => m.DocumentAuditModule)
       },
       {
         path: 'meetings',

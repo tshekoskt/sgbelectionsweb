@@ -18,7 +18,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'Documents',
     icon: 'home',
-    link: '/elections'
+    link: '/documents'
   },
   {
     label: 'Meetings',
