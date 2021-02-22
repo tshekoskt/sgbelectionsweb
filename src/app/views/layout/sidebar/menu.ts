@@ -16,7 +16,38 @@ export const MENU: MenuItem[] = [
     link: '/elections'
   },
   {
-    label: 'Web Apps',
+    label: 'Documents',
+    icon: 'home',
+    link: '/elections'
+  },
+  {
+    label: 'Meetings',
+    icon: 'home',
+    link: '/elections'
+  },
+  {
+    label: 'Handover School Reports',
+    icon: 'home',
+    link: '/elections'
+  },
+  {
+    label: 'Events',
+    icon: 'home',
+    link: '/elections'
+  },
+  {
+    label: 'District Memos',
+    icon: 'home',
+    link: '/elections'
+  },
+  {
+    label: 'User Management',
+    icon: 'home',
+    link: '/elections'
+  },
+  //=================================================================================================================
+  {
+    label: '==Web Apps==',
     isTitle: true
   },
   {

@@ -21,8 +21,32 @@ const routes: Routes = [
         path: 'elections',
         loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
       },
+      {
+        path: 'documents',
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+      },
+      {
+        path: 'meetings',
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+      },
+      {
+        path: 'handover',
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+      },
+      {
+        path: 'districtmemos',
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+      },
+      {
+        path: 'usermanagement',
+        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+      },
 
-    //===============================================================================================================//
+//======================================================================================================================//
       {
         path: 'apps',
         loadChildren: () => import('./views/pages/apps/apps.module').then(m => m.AppsModule)
