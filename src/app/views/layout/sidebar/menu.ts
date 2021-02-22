@@ -23,12 +23,12 @@ export const MENU: MenuItem[] = [
   {
     label: 'Meetings',
     icon: 'home',
-    link: '/elections'
+    link: '/meetings'
   },
   {
     label: 'Handover School Reports',
     icon: 'home',
-    link: '/elections'
+    link: '/handover'
   },
   {
     label: 'Events',

@@ -31,11 +31,11 @@ const routes: Routes = [
       },
       {
         path: 'meetings',
-        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+        loadChildren: () => import('./views/pages/_Meetings/meetings-table/meetings-table.module').then(m => m.MeetingsTableModule)
       },
       {
         path: 'handover',
-        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+        loadChildren: () => import('./views/pages/_HandoverSchoolReport/handover-school-report-table/handover-school-report-table.module').then(m => m.HandoverSchoolReportTableModule)
       },
       {
         path: 'events',
