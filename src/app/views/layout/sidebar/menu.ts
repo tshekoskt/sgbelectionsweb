@@ -38,7 +38,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'District Memos',
     icon: 'home',
-    link: '/elections'
+    link: '/districtmemos'
   },
   {
     label: 'User Management',

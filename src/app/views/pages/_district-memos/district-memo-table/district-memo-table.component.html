@@ -1,0 +1,137 @@
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink=".">District Memos</a></li>
+  </ol>
+</nav>
+
+<!--<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Simple-datatables</h4>
+        <p class="card-description mb-0">Read the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank"> Official Simple-datatables Documentation </a>for a full list of instructions and other options.</p>
+      </div>
+    </div>
+  </div
+</div>-->
+<h4 class="card-title text-primary">District Memos</h4>
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <!-- Button trigger modal -->
+        <!-- <a type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#districtmemoModel">
+          ADD NEW
+        </a> -->
+        <!-- Modal -->
+        <div class="modal fade" id="districtmemoModel" tabindex="-1" aria-labelledby="electionModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="electionModalLabel">District Memo Details</h5>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="disabledTextInput" class="form-label">Title</label>
+                      <input type="text" disabled id="title" class="form-control" value={{tittle}}>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="disabledTextInput" class="form-label">District</label>
+                      <input type="text" disabled id="title" class="form-control" value={{school}}>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="disabledTextInput" class="form-label">School</label>
+                      <input type="text" disabled id="title" class="form-control" value={{district}}>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="disabledTextInput" class="form-label">Submitted By</label>
+                      <input type="text" disabled id="title" class="form-control" value={{uploadedBy}}>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="disabledTextInput" class="form-label">Date Submitted</label>
+                      <input type="text" disabled id="title" class="form-control" value={{date}}>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="disabledTextInput" class="form-label">Document</label>
+                      <br/>
+                      <label for="disabledTextInput" class="form-label text-primary">{{tittle}}.pdf</label>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary ml-auto mr-auto bg-primary" data-bs-dismiss="modal">Back</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table id="dataTableExample" class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>District</th>
+                <th>School</th>
+                <th>Uploaded by</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let dm of district_memos; let i = index">
+              <tr>
+                <td>{{dm.title}}</td>
+                <td>{{dm.district}}</td>
+                <td>{{dm.school}}</td>
+                <td>{{dm.uploadedBy}}</td>
+                <td>
+                  <a><i class="mdi mdi-eye text-dark" (click)="view(i)" data-bs-toggle="modal" data-bs-target="#districtmemoModel"></i></a>
+                  &nbsp;&nbsp;
+                  <a><i class="mdi mdi-pencil text-dark" (click)="edit(i)"></i></a>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+</div>

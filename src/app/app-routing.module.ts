@@ -39,7 +39,7 @@ const routes: Routes = [
       },
       {
         path: 'districtmemos',
-        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+        loadChildren: () => import('./views/pages/_district-memos/district-memos.module').then(m => m.DistrictMemosModule)
       },
       {
         path: 'usermanagement',
