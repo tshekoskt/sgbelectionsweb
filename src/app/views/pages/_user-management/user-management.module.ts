@@ -24,6 +24,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { UserManagementComponent } from './user-management.component';
 import { UserManagementTableComponent } from './user-management-table/user-management-table.component';
+import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -39,6 +40,10 @@ const routes: Routes = [
         redirectTo: '',
         component: UserManagementTableComponent,
         pathMatch: 'full'
+      },
+      {
+        path: 'addnewuser',
+        component: AddNewUserComponent
       }
     ]
   }
@@ -46,7 +51,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [UserManagementComponent, UserManagementTableComponent],
+  declarations: [UserManagementComponent, UserManagementTableComponent, AddNewUserComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
