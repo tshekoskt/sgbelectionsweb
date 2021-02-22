@@ -1,0 +1,212 @@
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink=".">User Management</a></li>
+  </ol>
+</nav>
+
+<h4 class="card-title text-primary">User Management</h4>
+
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="example col-12">
+            <ul ngbNav #defaultNav="ngbNav" class="nav-tabs">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>Head Office</a>
+                <ng-template ngbNavContent>
+
+                  <div class="table-responsive">
+
+                    <a type="button" class="btn btn-primary float-right">
+                      ADD NEW
+                    </a>
+                    <table id="dataTableExample" class="table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>I.D. Number</th>
+                          <th>Email</th>
+                          <th>Cellphone Number</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let headOffice of table; let i = index">
+                        <tr>
+                          <td>{{headOffice.name}}</td>
+                          <td>{{headOffice.idNumber}}</td>
+                          <td>{{headOffice.email}}</td>
+                          <td>{{headOffice.cellphoneNumber}}</td>
+                          <td>
+                            <a><i class="mdi mdi-eye text-dark" (click)="view(i)"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Provincial</a>
+                <ng-template ngbNavContent>
+
+
+                  <div class="table-responsive">
+
+                    <a type="button" class="btn btn-primary float-right">
+                      ADD NEW
+                    </a>
+                    <table id="dataTableExample" class="table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>I.D. Number</th>
+                          <th>Email</th>
+                          <th>cellphone Number</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let provincial of table; let i = index">
+                        <tr>
+                          <td>{{provincial.name}}</td>
+                          <td>{{provincial.idNumber}}</td>
+                          <td>{{provincial.email}}</td>
+                          <td>{{provincial.cellphoneNumber}}</td>
+                          <td>
+                            <a><i class="mdi mdi-eye text-dark" (click)="view(i)"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>District</a>
+                <ng-template ngbNavContent>
+
+
+                  <div class="table-responsive">
+
+                    <a type="button" class="btn btn-primary float-right">
+                      ADD NEW
+                    </a>
+                    <table id="dataTableExample" class="table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>I.D./Passport Number</th>
+                          <th>Email</th>
+                          <th>District</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let districts of table; let i = index">
+                        <tr>
+                          <td>{{districts.name}}</td>
+                          <td>{{districts.idNumber}}</td>
+                          <td>{{districts.email}}</td>
+                          <td>{{districts.district}}</td>
+                          <td>
+                            <a><i class="mdi mdi-eye text-dark" (click)="view(i)"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="4">
+                <a ngbNavLink>School</a>
+                <ng-template ngbNavContent>
+
+
+                  <div class="table-responsive">
+
+                    <a type="button" class="btn btn-primary float-right">
+                      ADD NEW
+                    </a>
+                    <table id="dataTableExample" class="table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>I.D./Passport Number</th>
+                          <th>Email</th>
+                          <th>District</th>
+                          <th>School</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let schools of table; let i = index">
+                        <tr>
+                          <td>{{schools.name}}</td>
+                          <td>{{schools.idNumber}}</td>
+                          <td>{{schools.email}}</td>
+                          <td>{{schools.district}}</td>
+                          <td>{{schools.school}}</td>
+                          <td>
+                            <a><i class="mdi mdi-eye text-dark" (click)="view(i)"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                </ng-template>
+              </li>
+            </ul>
+
+            <div [ngbNavOutlet]="defaultNav" class="border border-top-0 p-3"></div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

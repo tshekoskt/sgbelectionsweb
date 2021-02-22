@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import { CodePreviewModule } from '../../partials/code-preview/code-preview.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,18 +15,15 @@ import { ArchwizardModule } from 'angular-archwizard';
 
 import { FeahterIconModule } from '../../../core/feather-icon/feather-icon.module';
 
-
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { Routes, RouterModule } from '@angular/router';
-
-
-import { DistrictMemoTableComponent } from './district-memo-table/district-memo-table.component';
-import { DistrictMemosComponent } from './district-memos.component'
-
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
+import { UserManagementComponent } from './user-management.component';
+import { UserManagementTableComponent } from './user-management-table/user-management-table.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -34,25 +32,21 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 const routes: Routes = [
   {
     path: '',
-    component: DistrictMemosComponent,
+    component: UserManagementComponent,
     children: [
       {
         path: '',
         redirectTo: '',
-        component: DistrictMemoTableComponent,
+        component: UserManagementTableComponent,
         pathMatch: 'full'
       }
-      // {
-      //   path: 'overview',
-      //   component: DistrictMemosComponent
-      // }
     ]
   }
 
 ]
 
 @NgModule({
-  declarations: [DistrictMemosComponent, DistrictMemoTableComponent],
+  declarations: [UserManagementComponent, UserManagementTableComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -74,4 +68,4 @@ const routes: Routes = [
     }
   ]
 })
-export class DistrictMemosModule { }
+export class UserManagementModule { }

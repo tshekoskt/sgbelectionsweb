@@ -47,7 +47,7 @@ const routes: Routes = [
       },
       {
         path: 'usermanagement',
-        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+        loadChildren: () => import('./views/pages/_user-management/user-management.module').then(m => m.UserManagementModule)
       },
 
 //======================================================================================================================//

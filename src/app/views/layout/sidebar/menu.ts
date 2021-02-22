@@ -43,7 +43,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'User Management',
     icon: 'home',
-    link: '/elections'
+    link: '/usermanagement'
   },
   //=================================================================================================================
   {
