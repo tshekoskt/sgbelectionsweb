@@ -49,6 +49,10 @@ const routes: Routes = [
         path: 'usermanagement',
         loadChildren: () => import('./views/pages/_user-management/user-management.module').then(m => m.UserManagementModule)
       },
+      {
+        path: 'countdown',
+        loadChildren: () => import('./views/pages/_election-countdown/countdown/countdown.module').then(m => m.CountdownModule)
+      },
 
 //======================================================================================================================//
       {
