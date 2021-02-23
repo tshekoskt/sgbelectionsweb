@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { ParentLoginComponent } from './parent-login/parent-login.component';
 import { ParentOtpComponent } from './parent-otp/parent-otp.component';
+import { ParantSchoolComponent } from './parant-school/parant-school.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent,ParentOtpComponent, AuthComponent, ParentLoginComponent,ParentLoginComponent, ParentOtpComponent],
+  declarations: [LoginComponent, RegisterComponent,ParentOtpComponent, AuthComponent, ParentLoginComponent,ParentLoginComponent, ParentOtpComponent, ParantSchoolComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
