@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
+import { ParentLoginComponent } from './parent-login/parent-login.component';
+import { ParentOtpComponent } from './parent-otp/parent-otp.component';
 
 const routes: Routes = [
   {
@@ -20,15 +22,23 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
+        path: 'parent-login',
+        component: ParentLoginComponent
+      },
+      {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'parent-otp',
+        component: ParentOtpComponent
       }
     ]
   },
 ]
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, AuthComponent],
+  declarations: [LoginComponent, RegisterComponent,ParentOtpComponent, AuthComponent, ParentLoginComponent,ParentLoginComponent, ParentOtpComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
