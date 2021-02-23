@@ -13,21 +13,23 @@
           <div class="card-body">
             <div class="row">
               <div class="row">
-                  <div class="col-xl-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <h6 class="card-title">Doughnut chart</h6>
-                
-                        <canvas baseChart 
-                          [data]="doughnutChartData"
-                          [labels]="doughnutChartLabels"
-                          [chartType]="doughnutChartType"
-                          [colors]="doughnutChartColors">
-                        </canvas>
-                
-                      </div>
+                <div class="col-xl-6 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-title">Donut chart</h6>
+              
+                      <apx-chart
+                        [series]="donutChartOptions.nonAxisSeries"
+                        [chart]="donutChartOptions.chart"
+                        [colors]="donutChartOptions.colors"
+                        [stroke]="donutChartOptions.stroke"
+                        [legend]="donutChartOptions.legend"
+                        [dataLabels]="donutChartOptions.dataLabels"
+                      ></apx-chart>
+              
                     </div>
                   </div>
+                </div>
               </div>
              
             </div>
@@ -53,7 +55,11 @@
           </div>
         </div>
       </div>
+      
+      
     </div>
+
+    
   </div>
 </div>
 
@@ -65,8 +71,8 @@
     <div class="card">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline mb-2">
-          <h5 class="card-title mb-0"></h5>
-         
+        <h5 class="card-title mb-0"></h5>
+          
         </div>
         <div class="table-responsive">
           <table class="table table-hover mb-0"  id="dataTableExample">

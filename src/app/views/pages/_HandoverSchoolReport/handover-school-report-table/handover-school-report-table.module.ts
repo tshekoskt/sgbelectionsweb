@@ -6,9 +6,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Ng-ApexCharts
 import { NgApexchartsModule } from "ng-apexcharts";
-
 // Ng2-charts
 import { ChartsModule } from 'ng2-charts';
+
+
 
 
 
@@ -17,17 +18,6 @@ const routes: Routes = [
   {
     path: '',
     component: HandoverSchoolReportTableComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'apexcharts',
-        pathMatch: 'full'
-      },
-      {
-        path: 'chartjs',
-        component: HandoverSchoolReportTableComponent
-      }
-    ]
   
   }
 ]
@@ -37,7 +27,8 @@ const routes: Routes = [
   declarations: [HandoverSchoolReportTableComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgApexchartsModule
   ]
 })
 export class HandoverSchoolReportTableModule { }
