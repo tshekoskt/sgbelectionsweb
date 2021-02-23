@@ -1,7 +1,21 @@
-<nav class="page-breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink=".">Forms</a></li>
-  </ol>
+<nav class="navbar">
+  <a href="" class="sidebar-toggler" (click)="toggleSidebar($event)">
+
+  </a>
+
+</nav>
+
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+
+    <!--- Logo -->
+    <a routerLink="/" class="sidebar-brand">
+      <img src="../assets/images/DepartmentEducationLogo.png " >
+    </a>
+
+
+  </div>
 </nav>
 
 
@@ -10,20 +24,19 @@
   <div class="col-md-5 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Input Size</h6>
-        <p class="mb-3">Use class <code>.form-control-lg</code> or <code>.form-control-sm</code></p>
+        <h6 class="card-title">PROPOSE A NOMINATION</h6>
+        <p class="mb-3">Please select a parent that you would like to nominate</p>
         <form>
-          <div class="form-group">
-            <label for="colFormLabelSm">Small</label>
-            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="form-control-sm">
-          </div>
-          <div class="form-group">
-            <label for="colFormLabel">Default</label>
-            <input type="email" class="form-control" id="colFormLabel" placeholder="form-control">
-          </div>
-          <div class="form-group mb-0">
-            <label for="colFormLabelLg" class="pb-0">Large</label>
-            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="form-control-lg">
+          <div class="row form-group">
+            <div class="form-group">
+              <div class="form-check" *ngFor="let parent of parents; let i = index">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="proposed" id="proposed">
+                  <i class="input-frame"></i>
+                  {{parent.name}}
+                </label>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -32,36 +45,28 @@
   <div class="col-md-5 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Select Size</h6>
-        <p class="mb-3">Use class <code>.form-control-lg</code> or <code>.form-control-sm</code></p>
-        <div class="form-group">
-          <label>Small</label>
-          <select class="form-control form-control-sm mb-3">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Default</label>
-          <select class="form-control mb-3">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Large</label>
-          <select class="form-control form-control-lg">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
+        <h6 class="card-title">SECOND A NOMINATION</h6>
+        <p class="mb-3">Please select proposed condidates whom you would like to second</p>
+        <form>
+          <div class="row form-group">
+            <div class="form-group">
+              <div class="form-check" *ngFor="let parent of parents; let i = index">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="second" id="second">
+                  <i class="input-frame"></i>
+                  {{parent.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
+<div class="row hbtn ml-auto mr-auto">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  &nbsp;&nbsp;&nbsp;
+  <button type="submit" class="btn btn-danger">Cancel</button>
 </div>

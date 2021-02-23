@@ -1,13 +1,23 @@
 .htitle {
-  height: 100vh;
+  // height: 25vh;
+  padding-top: 12vh;
+  padding-bottom: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hform {
-  height: 100vh;
+  height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hbtn {
+  // height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12vh;
 }
