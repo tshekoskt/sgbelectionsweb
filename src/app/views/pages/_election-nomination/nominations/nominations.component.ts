@@ -66,7 +66,7 @@ export class NominationsComponent implements OnInit {
 
   toggleSidebar(e) {
     e.preventDefault();
-    this.document.body.classList.toggle('sidebar-open');
+    //this.document.body.classList.toggle('sidebar-open');
   }
 
 
@@ -75,7 +75,7 @@ export class NominationsComponent implements OnInit {
     localStorage.removeItem('isLoggedin');
 
     if (!localStorage.getItem('isLoggedin')) {
-      this.router.navigate(['/auth/login']);
+     // this.router.navigate(['/auth/login']);
     }
   }
 
