@@ -33,7 +33,7 @@ export const MENU: MenuItem[] = [
   {
     label: 'Events',
     icon: 'home',
-    link: '/elections'
+    link: '/dashboard'
   },
   {
     label: 'District Memos',

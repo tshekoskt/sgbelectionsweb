@@ -1,1 +1,221 @@
-<p>add-new-user works!</p>
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="../">User Management</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add New User</li>
+  </ol>
+</nav>
+
+<h4 class="card-title text-primary">Add New User</h4>
+
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+
+
+        <h6 class="card-title">Personal Information</h6>
+
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Nationality</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="IDnumber" class="form-label">I.D. Number</label>
+              <input type="text" id="IDnumber" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Country</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="passportnumber" class="form-label">Passport Number</label>
+              <input type="text" id="passportnumber" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>GDE Employees?</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="persalnumber" class="form-label">Persal Number</label>
+              <input type="text" id="persalnumber" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="firstname" class="form-label">First Name</label>
+              <input type="text" id="firstname" class="form-control" placeholder="Type here">
+            </div>
+            <div class="col-md-6">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="text" id="lastname" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Gender</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <h6 class="card-title">Address Details</h6>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label for="housenumber" class="form-label">House/Stand/Erf Number</label>
+              <input type="text" id="housenumber" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="complexname" class="form-label">Complex Name & Unit No</label>
+              <input type="text" id="complexname" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="streetname" class="form-label">Street Name</label>
+              <input type="text" id="streetname" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="suburb" class="form-label">Suburb/Township</label>
+              <input type="text" id="suburb" class="form-control" placeholder="Type here">
+            </div>
+            <div class="col-md-6">
+              <label for="section" class="form-label">Section/Extention</label>
+              <input type="text" id="section" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="city" class="form-label">City</label>
+              <input type="text" id="city" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="informalsettlement" class="form-label">Informal Settlement</label>
+              <input type="text" id="informalsettlement" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+
+          <br />
+          <h6 class="card-title">Contact Details</h6>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="Type here">
+            </div>
+            <div class="col-md-6">
+              <label for="contactnumber" class="form-label">Contact Number</label>
+              <input type="text" id="contactnumber" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+
+          <br />
+          <h6 class="card-title">Account Details</h6>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label>User Type</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">Type 1</option>
+                <option value="2">Type 2</option>
+                <option value="3">Type 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>District</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">District 1</option>
+                <option value="2">District 2</option>
+                <option value="3">District 3</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label>School</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">one</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Is this user a representative from a direction or SGB Association</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label>Directorate/SGB Association</label>
+              <select class="form-control mb-3" placeholder="Please select">
+                <option value="" selected hidden>Please select</option>
+                <option value="1">one</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+
+
+          <h6 class="card-title">Security Details</h6>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" placeholder="Type here">
+            </div>
+            <div class="col-md-6">
+              <label for="repeatpassword" class="form-label">Repeat Password</label>
+              <input type="password" id="repeatpassword" class="form-control" placeholder="Type here">
+            </div>
+          </div>
+
+          <br />
+          <div class="ml-auto mr-auto row">
+            <button type="submit" class="btn btn-primary mr-2 ml-auto mr-auto">Submit</button>
+            <button class="btn btn-danger ml-auto mr-auto">Cancel</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
