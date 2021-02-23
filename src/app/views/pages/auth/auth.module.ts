@@ -33,6 +33,10 @@ const routes: Routes = [
       {
         path: 'parent-otp',
         component: ParentOtpComponent
+      },
+      {
+        path: 'parentschool',
+        component: ParantSchoolComponent
       }
     ]
   },
