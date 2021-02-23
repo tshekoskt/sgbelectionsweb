@@ -6,8 +6,14 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 
 
 const routes: Routes = [
-  { path:'auth', loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule) },
-
+  {
+    path: 'auth',
+    loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'electionnomination',
+    loadChildren: () => import('./views/pages/_election-nomination/election-nomination.module').then(m => m.ElectionNominationModule)
+  },
   {
     path: '',
     component: BaseComponent,
@@ -54,7 +60,7 @@ const routes: Routes = [
         loadChildren: () => import('./views/pages/_election-countdown/countdown/countdown.module').then(m => m.CountdownModule)
       },
 
-//======================================================================================================================//
+      //======================================================================================================================//
       {
         path: 'apps',
         loadChildren: () => import('./views/pages/apps/apps.module').then(m => m.AppsModule)
