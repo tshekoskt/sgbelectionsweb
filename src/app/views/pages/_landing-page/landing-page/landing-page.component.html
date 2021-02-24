@@ -1,22 +1,30 @@
-<div >
-
-    <div class="container  justify-content-center">
-        <br>
-      <ul class="nav float-right">
-        <li class="nav-item">
-          <a href="#" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Contact Us</a>
-        </li>
-        <li class="nav-item">
-            <button  type="button" class="btn btn-primary">LOGIN/REGISTER</button>
-          </li>
-      </ul>    
-      
+<div class="container-fluid bg-white backgroundImage">
+    <div class="row">
+        <div class="col-md-12"> 
+            <img src="../assets/images/DepartmentEducationLogo.png " class="float-left bg-white" styek>        
+            <ul class="nav float-right bg-white mt-2">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" (click)="parentlogin()">Parent Login</a>
+                </li>
+                <li class="nav-item">
+                    <button  type="button" class="btn btn-primary ml-1" (click)="login()">LOGIN / REGISTER</button>
+                </li>
+              </ul> 
+        </div>
     </div>
+    <div class="row justify-content-center backgroundImage">
+        <div class="col-md-12 backgroundImage">
+           <div [style.background-image]="'url(../assets/images/DepartmentEducationLogo.png)'"></div>
+        </div>
+    </div>
+
 </div>
-    
