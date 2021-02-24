@@ -44,6 +44,11 @@ export const MENU: MenuItem[] = [
     label: 'User Management',
     icon: 'home',
     link: '/usermanagement'
+  },
+  {
+    label: 'Principal Dashboard',
+    icon: 'home',
+    link: '/elections/overview'
   }
   //=================================================================================================================
 //   {
