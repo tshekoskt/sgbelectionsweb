@@ -10,6 +10,7 @@ import { ElectionsService } from '../../_SERVICE/elections.service';
 export class MeetingsTableComponent implements OnInit {
 
   meetings = [];
+  meeting = [];
   //  [
   //   {
   //     title: "Meeting 09",
@@ -78,6 +79,15 @@ export class MeetingsTableComponent implements OnInit {
   //     scheduledBy: "Kgothatso Moremi"
   //   },
   // ]
+  // title: String,
+  // startDate: String,
+  // startTime: String,
+  // endDate: String,
+  // endTime: String,
+  // venue: String,
+  // description: String,
+  // minutes: String,
+  // scheduledBy: String
 
   constructor(private _meetingService: ElectionsService) { }
 
@@ -87,7 +97,31 @@ export class MeetingsTableComponent implements OnInit {
 
       this.meetings = res;
 
-      console.log(this.meetings);
+      for(var x=0;x<this.meetings.length;x++){
+        this.meeting = [
+          this.meetings[x].title,
+          this.meetings[x].startDate,
+          this.meetings[x].startTime,
+          this.meetings[x].scheduledBy,
+          "<a><i class='mdi mdi-eye text-dark' (click)='view("+x+")'></i></a>&nbsp;&nbsp;<a><i class='mdi mdi-pencil text-dark' (click)='edit("+x+")'></i></a>"
+        ]
+      }
+
+      let newData = {
+        headings: [
+          "Title",
+          "Start Date",
+          "Start Time",
+          "Scheduled By",
+          "Action"
+        ],
+        data: [
+          this.meeting
+        ]
+      }
+      dataTable.insert(newData);
+
+      console.log(this.meeting);
 
 
     });
