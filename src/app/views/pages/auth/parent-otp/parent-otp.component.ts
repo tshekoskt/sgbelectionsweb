@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-parent-otp',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentOtpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
+
+  //../../electionnomination
 
   ngOnInit(): void {
+  }
+
+  verifyOTP() {
+    this._router.navigate(['../../electionnomination']);
   }
 
 }
