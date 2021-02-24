@@ -20,7 +20,6 @@ export class MeetingsTableComponent implements OnInit {
     this._meetingService.getAllMeetings().subscribe(res => {
 
       this.meetings = res;
-      console.log(this.meetings);
 
       for (var x = 0; x < this.meetings.length; x++) {
         this.meeting = [
@@ -45,6 +44,7 @@ export class MeetingsTableComponent implements OnInit {
         ]
       }
       dataTable.insert(newData);
+      console.log(this.meetings);
 
 
 
