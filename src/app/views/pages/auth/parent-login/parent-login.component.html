@@ -13,6 +13,8 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Number</label>
                   <input type="text" formControlName="parentID" required class="form-control" id="parentid" >
+                  <p *ngIf="error" class="text-danger">Invalid ID number please try again</p>
+                  <!-- <p *ngIf="error" class="text-danger">{{errorMsg}}</p> -->
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-md-4">
@@ -21,7 +23,7 @@
                   </div>
                   <div class="col-4">
                     <!-- <button class="btn btn-danger" (click)="election($event)">Cancel</button> -->
-                    <input type="button" (click)="election($event)" class="btn btn-danger" value="Cancel"/>
+                    <input type="button" (click)="cancel()" class="btn btn-danger" value="Cancel"/>
                   </div>
 
                 </div>

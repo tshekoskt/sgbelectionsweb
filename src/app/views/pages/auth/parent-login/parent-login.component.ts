@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { ElectionsService } from '../../_SERVICE/elections.service';
-import {FormBuilder, FormGroup} from "@angular/forms"
+import { FormBuilder, FormGroup } from "@angular/forms"
+import { isNull } from '@angular/compiler/src/output/output_ast';
 declare var $: any;
 
 @Component({
@@ -15,45 +16,59 @@ export class ParentLoginComponent implements OnInit {
   returnUrl: any;
   parentID: any;
   idnumber: any;
-  myStorage:any;
+  myStorage: any;
   response: any;
 
+  error = false;
+  errorMsg;
 
-  constructor(private router: Router, private route: ActivatedRoute,private _parent: ElectionsService, private formBuilder: FormBuilder){ }
 
- form: FormGroup;
+  constructor(private router: Router, private route: ActivatedRoute, private _parent: ElectionsService, private formBuilder: FormBuilder) { }
+
+  form: FormGroup;
 
   ngOnInit(): void {
-   this.form = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       parentID: ""
-   });
+    });
 
   }
 
   getOtp() {
 
-    this.parentID = this.form.controls['parentID'].value
+    this.parentID = this.form.controls['parentID'].value;
+    this.error = false;
 
-    // this._parent.sendOTP(this.parentID).subscribe((res: any) => {
-    //   this.response = res;
-    //   localStorage.setItem('cellnumber', res);
-    //   this.myStorage = localStorage.getItem("cellnumber");
+    if (this.parentID == "" || isNull(this.parentID)) {
+      this.errorMsg = "Please enter your ID number to login";
+      this.error = true;
+    } else {
 
-    // })
-    this.router.navigate(['/auth/parent-otp']);
+      this.error = false;
+
+      this._parent.sendOTP(this.parentID).subscribe((res: any) => {
+        this.response = res;
+
+        if (isNull(res) || res == "") {
+          this.errorMsg = "ID number not registered";
+          this.error = true;
+        } else {
+          this.error = false;
+
+          localStorage.setItem('cellnumber', res);
+          this.myStorage = localStorage.getItem("cellnumber");
+
+          this.router.navigate(['/auth/parent-otp']);
+        }
+
+      })
+    }
 
 
   }
 
-  election(e){
-    // this.router.navigate(['/landing'])
-    // e.preventDefault();
-    // localStorage.setItem('isLoggedin', 'true');
-    // if (localStorage.getItem('')) {
-    //   this.router.navigate([this.returnUrl]);
-    // }
-
-    this.router.navigate(['/auth/parent-login'])
+  cancel() {
+    this.router.navigate(['../../homepage']);
   }
 
 }
