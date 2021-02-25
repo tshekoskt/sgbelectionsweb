@@ -16,6 +16,8 @@ export class ParentLoginComponent implements OnInit {
   parentID: any;
   idnumber: any;
   myStorage:any;
+  response: any;
+
 
   constructor(private router: Router, private route: ActivatedRoute,private _parent: ElectionsService, private formBuilder: FormBuilder){ }
 
@@ -33,17 +35,14 @@ export class ParentLoginComponent implements OnInit {
     this.parentID = this.form.controls['parentID'].value
 
     this._parent.sendOTP(this.parentID).subscribe((res: any) => {
-      console.log(res);
+      this.response = res;
       localStorage.setItem('cellnumber', res);
-      this.myStorage = window.localStorage;
-     
-      
-     
-      
-  
+      this.myStorage = localStorage.getItem("cellnumber");
+      this.router.navigate(['/auth/parent-otp']);
         
     })
-   // this.router.navigate(['/auth/parent-otp'])
+
+    
   }
 
   election(e){
