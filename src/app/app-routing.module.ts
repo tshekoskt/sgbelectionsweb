@@ -67,12 +67,7 @@ const routes: Routes = [
         path: 'countdown',
         loadChildren: () => import('./views/pages/_election-countdown/countdown/countdown.module').then(m => m.CountdownModule)
       },
-      {
-        path: 'electionnomination',
-        loadChildren: () => import('./views/pages/_election-nomination/election-nomination.module').then(m => m.ElectionNominationModule)
-      },
-
-
+      
       //======================================================================================================================//
       {
         path: 'apps',

@@ -1,5 +1,7 @@
 .backgroundImage{
     background-image: url('../images/hero-slider.png');
-    background-size: 200px 100px;
+    background-size: 400px 600px;
+    opacity: 60%;
+    color:blue
 }
 

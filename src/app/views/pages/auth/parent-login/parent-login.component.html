@@ -9,14 +9,14 @@
               <p class="text-center">Please enter your I.D Number below</p>
               <p class="text-center">to verify your identity</p>
               <br>
-              <form class="forms-sample">
+              <form class="forms-sample" (submit)="getOtp()" [formGroup]="form">
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Number</label>
-                  <input type="text" class="form-control" id="parent-id" p value="">
+                  <input type="text" formControlName="parentID"  class="form-control" id="parentid" >
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-md-4">
-                    <button type="submit" class="btn btn-primary" (click)="onLoggedin($event)">Submit</button>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
                   </div>
                   <div class="col-4">
                     <button class="btn btn-danger" (click)="election($event)">Cancel</button>

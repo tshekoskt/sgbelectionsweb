@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router'
+import { ElectionsService } from '../../_SERVICE/elections.service';
+import {FormBuilder, FormGroup} from "@angular/forms"
+declare var $: any;
 
 @Component({
   selector: 'app-parent-login',
@@ -10,21 +13,30 @@ export class ParentLoginComponent implements OnInit {
 
 
   returnUrl: any;
+  parentID: any;
+  idnumber: any;
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute,private _parent: ElectionsService, private formBuilder: FormBuilder){ }
 
-  ngOnInit(): void {
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['/electionnomination'] || '/electionnomination';
+ form: FormGroup;
+
+  ngOnInit(): void { 
+   this.form = this.formBuilder.group({
+      parentID: ""
+   });
+   
   }
 
-  onLoggedin(e) {
-    // this.router.navigate(['/electionnomination'])
-    // e.preventDefault();
-    // localStorage.setItem('isLoggedin', 'true');
-    // if (localStorage.getItem('')) {
-    //   this.router.navigate([this.returnUrl]);
-    // }
+  getOtp() {
+
+    this.parentID = {
+      idNumber: this.form.controls['parentID'].value
+  }
+    this._parent.sendOTP(this.parentID).subscribe((res: any) => {
+      const str = res;
+  
+        
+    })
     this.router.navigate(['/auth/parent-otp'])
   }
 

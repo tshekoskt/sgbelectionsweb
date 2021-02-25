@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router,ActivatedRoute } from '@angular/router'
+import {FormBuilder, FormGroup} from "@angular/forms"
 
 @Component({
   selector: 'app-parent-otp',
@@ -8,14 +9,15 @@ import { Router } from '@angular/router'
 })
 export class ParentOtpComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  returnUrl: any;
 
-  //../../electionnomination
+  constructor(private router: Router, private route: ActivatedRoute,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+   
   }
 
-  verifyOTP() {
+  verifyOTP(e) {
     this.router.navigate(['../../electionnomination']);
   }
 

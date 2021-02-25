@@ -7,6 +7,7 @@ import { AuthComponent } from './auth.component';
 import { ParentLoginComponent } from './parent-login/parent-login.component';
 import { ParentOtpComponent } from './parent-otp/parent-otp.component';
 import { ParantSchoolComponent } from './parant-school/parant-school.component';
+import {ReactiveFormsModule} from "@angular/forms"
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
   declarations: [LoginComponent, RegisterComponent,ParentOtpComponent, AuthComponent, ParentLoginComponent,ParentLoginComponent, ParentOtpComponent, ParantSchoolComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }
