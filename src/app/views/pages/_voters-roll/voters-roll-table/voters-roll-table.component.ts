@@ -22,7 +22,7 @@ export class VotersRollTableComponent implements OnInit {
     this.votersService.getInfoByEmisCode(this.emisCode).subscribe(res => {
 
       this.voters = res;
-
+      console.log(res);
 
       // for (var x = 0; x < this.voters.length; x++) {
       //   this.voter = [

@@ -20,7 +20,8 @@ export class ElectionsService {
 
   // URL
   meetings_url = "https://sgbserviceapi.azurewebsites.net/api/Meeting/MeetingList";
-  base_url = "https://sgbserviceapi.azurewebsites.net";
+  base_url = "https://sgbserviceapi-dev.azurewebsites.net";
+  Xbase_url = "https://sgbserviceapi.azurewebsites.net";
 
 
 
@@ -40,7 +41,7 @@ export class ElectionsService {
   }
 
   sendOTP(IDnumber) {
-    return this.http.post(this.base_url + "/SendOTP?IDNumber=" + IDnumber, { headers: this.Header })
+    return this.http.get(this.base_url + "api/sms/SendOTP?IDNumber=" + IDnumber, { headers: this.Header })
   }
 
   resendOTP(id) {
