@@ -9,17 +9,26 @@ import { Router } from '@angular/router'
 })
 export class ParantSchoolComponent implements OnInit {
 
+  nominationStarted = "true"
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   selectSchool(){
-    this.router.navigate(['../../electionnomination']);
+
+    if(this.nominationStarted == "true") {
+      this.router.navigate(['../../electionnomination']);
+    } else {
+      this.router.navigate(['../../countdown']);
+    }
+
+
   }
 
   cancel() {
-    this.router.navigate(['../../homepage']);
+    this.router.navigate(['/auth/parent-login']);
   }
 
 }

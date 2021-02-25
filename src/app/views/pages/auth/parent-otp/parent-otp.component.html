@@ -9,17 +9,19 @@
               <p class="text-center">Please enter your one time password(OTP)</p>
               <p class="text-center">From your cellphone sms</p>
               <br>
-              <form class="forms-sample">
+              <form class="forms-sample" [formGroup]="OTPform">
                 <div class="form-group">
                   <label for="exampleInputEmail1">One Time Password</label>
-                  <input type="text" class="form-control" id="parent-id" p value="">
+                  <input type="text" class="form-control" required formControlName="OTP" id="OTP">
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-md-4">
-                    <button class="btn btn-primary" (click)="verifyOTP($event)" >Submit</button>
+                    <!-- <button class="btn btn-primary" (click)="verifyOTP($event)" >Submit</button> -->
+                    <input type="button" value="Submit" (click)="verifyOTP()" class="btn btn-primary"/>
                   </div>
                   <div class="col-4">
-                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+                    <!-- <button class="btn btn-danger" (click)="cancel()">Cancel</button> -->
+                    <input type="button" class="btn btn-danger" (click)="cancel()" value="Cancel"/>
                   </div>
 
                 </div>
