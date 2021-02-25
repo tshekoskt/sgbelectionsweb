@@ -71,6 +71,10 @@ const routes: Routes = [
         path: 'electionnomination',
         loadChildren: () => import('./views/pages/_election-nomination/election-nomination.module').then(m => m.ElectionNominationModule)
       },
+      {
+        path: 'votersroll',
+        loadChildren: () => import('./views/pages/_voters-roll/voters-roll.module').then(m => m.VotersRollModule)
+      },
 
 
       //======================================================================================================================//

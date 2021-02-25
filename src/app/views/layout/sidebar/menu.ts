@@ -45,10 +45,55 @@ export const MENU: MenuItem[] = [
     icon: 'home',
     link: '/usermanagement'
   },
+  // {
+  //   label: 'Principal Dashboard',
+  //   icon: 'home',
+  //   link: '/elections/overview'
+  // },
   {
-    label: 'Principal Dashboard',
-    icon: 'home',
-    link: '/elections/overview'
+    label: 'Overview',
+    icon: 'book',
+    link: '/votersroll/voterdetails'
+  },
+  {
+    label: 'Nominees',
+    icon: 'book',
+    link: '.'
+  },
+  {
+    label: "Voter's Roll",
+    icon: 'book',
+    link: '/votersroll'
+  },
+  {
+    label: 'Results',
+    icon: 'book',
+    link: '.'
+  },
+  {
+    label: 'Communication',
+    icon: 'book',
+    link: '.'
+  },
+  {
+    label: 'FAQ',
+    icon: 'book',
+    link: '.'
+  },
+  {
+    label: 'Queries',
+    icon: 'book',
+    link: '.'
+  },
+  {
+    label: 'Dusputes',
+    icon: 'book',
+    link: '.'
+  },
+  {
+    label: 'Observer Feedback',
+    icon: 'book',
+    link: '.'
   }
   //=================================================================================================================
 //   {
