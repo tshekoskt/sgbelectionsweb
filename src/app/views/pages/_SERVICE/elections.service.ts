@@ -65,10 +65,15 @@ export class ElectionsService {
 
 
 
+  ////////////// NOMINATION service ////////////////////////
+
+  getInfoByEmisCode(emisCode) {
+    return this.http.get(this.base_url + "/api/Nomination/GetScheduledInfoByEmisCode?EmisCode=" + emisCode)
+  }
+
+
   /*
-  https://sgbserviceapi.azurewebsites.net/GetParentInfo?IDNumber=9401095569086
-  /GetChildrenSchoolByParentId?ParentId=<integer>
-  /GetLeanersByParent?ParentId=<string>&EmisCode=<string>
+/api/Nomination/GetScheduledInfoByEmisCode?EmisCode=
   */
 
 }
