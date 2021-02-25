@@ -37,7 +37,7 @@ export class ElectionsService {
   }
 
   authParentOTP(phonenumber, otp) {
-    return this.http.post(this.base_url + "/AuthenticateOTP?MobileNumber=" + phonenumber + "&OTP=" + otp, { headers: this.Header })
+    return this.http.post(this.base_url + "/api/SMS/AuthenticateOTP?MobileNumber=" + phonenumber + "&OTP=" + otp, { headers: this.Header })
   }
 
   sendOTP(IDnumber) {
