@@ -53,7 +53,7 @@ export class ParentLoginComponent implements OnInit {
     //   this.router.navigate([this.returnUrl]);
     // }
 
-    this.router.navigate(['../../homepage'])
+    this.router.navigate(['/auth/parent-login'])
   }
 
 }
