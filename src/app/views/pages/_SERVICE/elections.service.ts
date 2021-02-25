@@ -41,7 +41,7 @@ export class ElectionsService {
   }
 
   sendOTP(IDnumber) {
-    return this.http.get(this.base_url + "api/sms/SendOTP?IDNumber=" + IDnumber, { headers: this.Header })
+    return this.http.get(this.base_url + "/api/SMS/SendOTP?IDNumber=" + IDnumber)
   }
 
   resendOTP(id) {

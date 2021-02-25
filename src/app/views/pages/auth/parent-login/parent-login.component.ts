@@ -15,6 +15,7 @@ export class ParentLoginComponent implements OnInit {
   returnUrl: any;
   parentID: any;
   idnumber: any;
+  otpres:any;
 
   constructor(private router: Router, private route: ActivatedRoute,private _parent: ElectionsService, private formBuilder: FormBuilder){ }
 
@@ -29,15 +30,24 @@ export class ParentLoginComponent implements OnInit {
 
   getOtp() {
 
-    this.parentID = {
-      idNumber: this.form.controls['parentID'].value
-  }
+    this.parentID = this.form.controls['parentID'].value
+
     this._parent.sendOTP(this.parentID).subscribe((res: any) => {
-      const str = res;
+      console.log(res);
+     
+      if(!res){
+        alert("Wrong ID");
+      }
+      else{
+
+        this.router.navigate(['/auth/parent-otp']);
+      }
+     
+      
   
         
     })
-    this.router.navigate(['/auth/parent-otp'])
+   // this.router.navigate(['/auth/parent-otp'])
   }
 
   election(e){
