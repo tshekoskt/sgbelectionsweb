@@ -13,8 +13,10 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Number</label>
                   <input type="text" formControlName="parentID" required class="form-control" id="parentid" >
-                  <p *ngIf="error" class="text-danger">Invalid ID number please try again</p>
-                  <!-- <p *ngIf="error" class="text-danger">{{errorMsg}}</p> -->
+                  <div *ngIf="error" class="error_text">
+                    <p class="text-danger">Invalid ID number please try again</p>
+                  </div>
+                  
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-md-4">
