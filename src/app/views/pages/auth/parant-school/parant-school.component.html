@@ -12,7 +12,7 @@
             <form class="forms-sample">
               <div class="form-group">
                 <label for="exampleInputEmail1">School Name</label>
-                <select class="form-control mb-3" required placeholder="Please select">
+                <select class="form-control mb-3" placeholder="Please select">
                   <option value="" selected hidden>Please select</option>
                   <option value="1">Lefofa Primary School</option>
                   <option value="2">P.H.L Moraka Secondary School</option>
@@ -22,10 +22,10 @@
               </div>
               <div class="row justify-content-center">
                 <div class="col-md-4">
-                  <button routerLink="../../electionnomination" class="btn btn-primary">Submit</button>
+                  <button (click)="selectSchool()" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-4">
-                  <button type="submit" class="btn btn-danger">Cancel</button>
+                  <button type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
                 </div>
 
               </div>

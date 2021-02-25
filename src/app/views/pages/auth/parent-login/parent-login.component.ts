@@ -8,7 +8,7 @@ import { Router,ActivatedRoute } from '@angular/router'
 })
 export class ParentLoginComponent implements OnInit {
 
-  
+
   returnUrl: any;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
@@ -19,21 +19,24 @@ export class ParentLoginComponent implements OnInit {
   }
 
   onLoggedin(e) {
-    this.router.navigate(['/electionnomination'])
-    e.preventDefault();
-    localStorage.setItem('isLoggedin', 'true');
-    if (localStorage.getItem('')) {
-      this.router.navigate([this.returnUrl]);
-    }
+    // this.router.navigate(['/electionnomination'])
+    // e.preventDefault();
+    // localStorage.setItem('isLoggedin', 'true');
+    // if (localStorage.getItem('')) {
+    //   this.router.navigate([this.returnUrl]);
+    // }
+    this.router.navigate(['/auth/parent-otp'])
   }
 
   election(e){
-    this.router.navigate(['/landing'])
-    e.preventDefault();
-    localStorage.setItem('isLoggedin', 'true');
-    if (localStorage.getItem('')) {
-      this.router.navigate([this.returnUrl]);
-    }
+    // this.router.navigate(['/landing'])
+    // e.preventDefault();
+    // localStorage.setItem('isLoggedin', 'true');
+    // if (localStorage.getItem('')) {
+    //   this.router.navigate([this.returnUrl]);
+    // }
+
+    this.router.navigate(['../../homepage'])
   }
 
 }

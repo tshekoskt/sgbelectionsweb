@@ -8,7 +8,7 @@ import { Router } from '@angular/router'
 })
 export class ParentOtpComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  constructor(private router: Router) { }
 
   //../../electionnomination
 
@@ -16,7 +16,11 @@ export class ParentOtpComponent implements OnInit {
   }
 
   verifyOTP() {
-    this._router.navigate(['../../electionnomination']);
+    this.router.navigate(['../../electionnomination']);
+  }
+
+  cancel() {
+    this.router.navigate(['../../homepage']);
   }
 
 }

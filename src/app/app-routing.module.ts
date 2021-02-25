@@ -7,7 +7,7 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 
 const routes: Routes = [
   {
-    path: 'landing',
+    path: 'homepage',
     loadChildren: () => import('./views/pages/_landing-page/landing-page/landing-page.module').then(m => m.LandingPageModule)
   },
   {
@@ -71,7 +71,7 @@ const routes: Routes = [
         path: 'electionnomination',
         loadChildren: () => import('./views/pages/_election-nomination/election-nomination.module').then(m => m.ElectionNominationModule)
       },
-     
+
 
       //======================================================================================================================//
       {
