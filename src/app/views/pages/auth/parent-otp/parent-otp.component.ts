@@ -34,35 +34,36 @@ console.log();localStorage.getItem('cellnumber')
 console.log(localStorage);
 
 
-this.OTPService.authParentOTP(this.cellnumber,this.OTP).subscribe(res => {
-  console.log(res);
+// this.OTPService.authParentOTP(this.cellnumber,this.OTP).subscribe(res => {
+//   console.log(res);
 
-  if(res == "true" || res == "True"){
-    this.router.navigate(['../../electionnomination']);
-  } else {
-    console.log("Invalid");
-  }
+//   if(res == "true" || res == "True"){
+//     this.router.navigate(['../../electionnomination']);
+//   } else {
+//     console.log("Invalid");
+//   }
 
-  // if(res) {
-
-
-  //   if(res.lenth > 1){
-
-  //   } else
-  //     if(res.length < "date") {
-
-  //     } else {
-
-  //     }
+//   // if(res) {
 
 
-  // } else {
-  //   console.log("Error")
-  // }
+//   //   if(res.lenth > 1){
 
-})
+//   //   } else
+//   //     if(res.length < "date") {
 
-    // this.router.navigate(['../../electionnomination']);
+//   //     } else {
+
+//   //     }
+
+
+//   // } else {
+//   //   console.log("Error")
+//   // }
+
+// })
+
+
+this.router.navigate(['/auth/parentschool']);
   }
 
   cancel() {

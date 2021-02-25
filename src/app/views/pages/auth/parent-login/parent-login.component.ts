@@ -23,26 +23,26 @@ export class ParentLoginComponent implements OnInit {
 
  form: FormGroup;
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
    this.form = this.formBuilder.group({
       parentID: ""
    });
-   
+
   }
 
   getOtp() {
 
     this.parentID = this.form.controls['parentID'].value
 
-    this._parent.sendOTP(this.parentID).subscribe((res: any) => {
-      this.response = res;
-      localStorage.setItem('cellnumber', res);
-      this.myStorage = localStorage.getItem("cellnumber");
-      this.router.navigate(['/auth/parent-otp']);
-        
-    })
+    // this._parent.sendOTP(this.parentID).subscribe((res: any) => {
+    //   this.response = res;
+    //   localStorage.setItem('cellnumber', res);
+    //   this.myStorage = localStorage.getItem("cellnumber");
 
-    
+    // })
+    this.router.navigate(['/auth/parent-otp']);
+
+
   }
 
   election(e){
