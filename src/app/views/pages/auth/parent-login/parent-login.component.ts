@@ -18,9 +18,8 @@ export class ParentLoginComponent implements OnInit {
   idnumber: any;
   myStorage: any;
   response: any;
+  error;
 
-  error = false;
-  errorMsg;
 
 
   constructor(private router: Router, private route: ActivatedRoute, private _parent: ElectionsService, private formBuilder: FormBuilder) { }
@@ -31,7 +30,7 @@ export class ParentLoginComponent implements OnInit {
     this.form = this.formBuilder.group({
       parentID: ""
     });
-
+ this.error = false;
   }
 
   getOtp() {
@@ -39,30 +38,20 @@ export class ParentLoginComponent implements OnInit {
     this.parentID = this.form.controls['parentID'].value;
     this.error = false;
 
-    if (this.parentID == "" || isNull(this.parentID)) {
-      this.errorMsg = "Please enter your ID number to login";
-      this.error = true;
-    } else {
+    
+    this._parent.sendOTP(this.parentID).subscribe((res: any) => {
+      this.response = res;
+      console.log(res.length);
 
-      this.error = false;
+      if(res.length > 1){        
+      localStorage.setItem('cellnumber', res);
+      this.myStorage = localStorage.getItem("cellnumber");
+      this.router.navigate(['/auth/parent-otp'])
+      } else {
+        console.log("error")
+        this.error = true;      }
 
-      this._parent.sendOTP(this.parentID).subscribe((res: any) => {
-        this.response = res;
-
-        if (isNull(res) || res == "") {
-          this.errorMsg = "ID number not registered";
-          this.error = true;
-        } else {
-          this.error = false;
-
-          localStorage.setItem('cellnumber', res);
-          this.myStorage = localStorage.getItem("cellnumber");
-
-          this.router.navigate(['/auth/parent-otp']);
-        }
-
-      })
-    }
+    })
 
 
   }
