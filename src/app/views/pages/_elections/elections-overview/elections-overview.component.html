@@ -377,10 +377,10 @@
   
           </div>
           <div class="modal-body">
-            <form [formGroup]="votersRollEditForm" (ngSubmit)="onSubmitNominee()">
+            <form [formGroup]="votersRollEditForm" (ngSubmit)="onSubmitVotersRoll()">
               <div class="form-group">
                 <label for="firstNameVottersRoll">First Name</label>
-                <input type="text" formControlName="firstNameNominee" class="form-control" id="firstNameVottersRoll" placeholder="{{votersRoll.firstName}} ">
+                <input type="text" formControlName="firstNameVottersRoll" class="form-control" id="firstNameVottersRoll" placeholder="{{votersRoll.firstName}} ">
               </div>
               <div class="form-group"> 
                 <label for="nominationSurname">Last Name</label>
