@@ -21,4 +21,9 @@ export class LandingPageComponent implements OnInit {
     this.router.navigate(['auth/parent-login'])
   }
 
+  principallogin(){
+    this.router.navigate(['../elections/overview'])
+
+  }
+
 }

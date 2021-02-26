@@ -67,11 +67,19 @@ export class ElectionsService {
 
 
   ////////////// NOMINATION service ////////////////////////
+  getAllNorminations(){
+    return this.http.get(this.base_url +"/api/Parent/GetNominatedParents?EmisCode=700400139");
+  }
 
   getInfoByEmisCode(emisCode) {
     return this.http.get(this.base_url + "/api/Nomination/GetScheduledInfoByEmisCode?EmisCode=" + emisCode)
   }
 
+  ///////////// Voters Roll service/////////////////////
+  getAllvoterRoll(){
+    
+    return this.http.get(this.base_url +"/api/Voting/GetSchoolVotingRoll?EmisCode=700400139");
+  }
 
   /*
 /api/Nomination/GetScheduledInfoByEmisCode?EmisCode=

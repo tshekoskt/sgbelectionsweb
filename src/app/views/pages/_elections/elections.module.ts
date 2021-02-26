@@ -9,6 +9,7 @@ import { ElectionsOverviewComponent } from './elections-overview/elections-overv
 import { CodePreviewModule } from '../../partials/code-preview/code-preview.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {DataTablesModule} from 'angular-datatables';
 
 
 // ngx-quill
@@ -65,6 +66,7 @@ const routes: Routes = [
     FeahterIconModule,
     QuillModule.forRoot(), // ngx-quill
     ArchwizardModule, // angular-archwizard
+    DataTablesModule
   ],
   providers: [
     {
