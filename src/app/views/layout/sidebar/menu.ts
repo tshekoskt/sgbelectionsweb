@@ -1,10 +1,10 @@
 import { MenuItem } from './menu.model';
 
 export const MENU: MenuItem[] = [
-  {
-    label: 'Main',
-    isTitle: true
-  },
+  // {
+  //   label: 'Main',
+  //   isTitle: true
+  // },
   {
     label: 'Dashboard',
     icon: 'home',
@@ -45,11 +45,10 @@ export const MENU: MenuItem[] = [
     icon: 'home',
     link: '/usermanagement'
   },
-  // {
-  //   label: 'Principal Dashboard',
-  //   icon: 'home',
-  //   link: '/elections/overview'
-  // },
+  {
+    label: ' ',
+    isTitle: true
+  },
   {
     label: 'Overview',
     icon: 'book',
