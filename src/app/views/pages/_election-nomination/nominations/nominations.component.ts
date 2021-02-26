@@ -1,6 +1,19 @@
-import { Component, OnInit, ViewChild, ElementRef, Inject, Renderer2 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Inject,
+  Renderer2
+} from '@angular/core';
+import {
+  DOCUMENT
+} from '@angular/common';
+import {
+  Router
+} from '@angular/router';
+import Swal from 'sweetalert2';
+import { ElectionsService } from '../../_SERVICE/elections.service';
 
 @Component({
   selector: 'app-nominations',
@@ -10,57 +23,34 @@ import { Router } from '@angular/router';
 export class NominationsComponent implements OnInit {
 
 
-  parents: any[] = [
-    {
-      name: "Timothy Mabina",
-      nominated: "True"
-    },
-    {
-      name: "Tshepo Mmutlwane",
-      nominated: "True"
-    },
-    {
-      name: "Karabo Letsoko",
-      nominated: "True"
-    },
-    {
-      name: "Duduzile Nkomo",
-      nominated: "True"
-    },
-    {
-      name: "Grace Matimela",
-      nominated: "True"
-    },
-    {
-      name: "Tefo Mbina",
-      nominated: "True"
-    },
-    {
-      name: "Tunelo Mmutlwa",
-      nominated: "True"
-    },
-    {
-      name: "Karabo Nnete",
-      nominated: "True"
-    },
-    {
-      name: "Dudu Nkgomo",
-      nominated: "True"
-    },
-    {
-      name: "Goitsi Maime",
-      nominated: "True"
-    }
-  ];
+  nominatedparents: any[] = [];
+
+  selectedNominee;
+
+  nominations;
+  seconded;
 
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
-    private router: Router
-  ) { }
+    private router: Router,
+    private _nominationService: ElectionsService
+  ) {}
 
   ngOnInit(): void {
+
+    this._nominationService.getProposedNominationsByEmisCode(700400139,5352).subscribe(res => {
+
+      this.nominations = res;
+console.log(this.nominations);
+    });
+
+    this._nominationService.getNominationsToBeSecondedByEmisCode(700400139,5352).subscribe(sec => {
+
+      this.seconded = sec;
+
+    });
   }
 
 
@@ -69,14 +59,64 @@ export class NominationsComponent implements OnInit {
     //this.document.body.classList.toggle('sidebar-open');
   }
 
-
   onLogout(e) {
     e.preventDefault();
     localStorage.removeItem('isLoggedin');
 
     if (!localStorage.getItem('isLoggedin')) {
-     // this.router.navigate(['/auth/login']);
+      // this.router.navigate(['/auth/login']);
     }
+  }
+
+  nominate() {
+    this.nominatedparents.push(this.selectedNominee);
+    const index: number = this.nominations.indexOf(this.selectedNominee);
+    if (index !== -1) {
+      this.nominations.splice(index, 1);
+    }
+    console.log(this.selectedNominee);
+  }
+
+  confirmBox(name) {
+
+    if (this.seconded.length == 0) {
+      Swal.fire({
+        title: 'Are you sure you want to nominate ' + name + '?',
+        text: 'You will not be able to nominate anymore!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Nominate!',
+        cancelButtonText: 'No, Do not nominate'
+      }).then((result) => {
+        if (result.value) {
+
+          this.nominate();
+
+          Swal.fire(
+            'Confirmation!',
+            name + ' has been nominated to be elected.',
+            'success'
+          )
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire(
+            'Cancelled',
+            'Your nomination was cancelled',
+            'error'
+          )
+        }
+      })
+    } else
+      //this.selectedNominee = {};
+      Swal.fire(
+        'Already Nominated',
+        'Your have already nominated',
+        'error'
+      )
+  }
+
+  markAsParentCompletedNomination(emisCode,parentId)
+  {
+
   }
 
 }

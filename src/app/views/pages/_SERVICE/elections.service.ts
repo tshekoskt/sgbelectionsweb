@@ -79,6 +79,17 @@ export class ElectionsService {
     return this.http.get(this.base_url + "/api/Nomination/GetScheduledInfoByEmisCode?EmisCode=" + emisCode);
   }
 
+  
+ ////////////// Nomination service ////////////////////////
+
+ getProposedNominationsByEmisCode(emisCode, id) {
+  return this.http.get(this.base_url + "/api/Nomination/GetProposedNominationsByEmisCode?EmisCode="+ emisCode + "&LoggedInParentId=" + id, { headers: this.Header })    
+}   
+
+getNominationsToBeSecondedByEmisCode(emisCode, id) {
+  return this.http.get(this.base_url + "/api/Nomination/GetNominationsToBeSecondedByEmisCode?EmisCode="+ emisCode + "&LoggedInParentId=" + id, { headers: this.Header })    
+}   
+
   ///////////// Voters Roll service/////////////////////
   getAllvoterRoll(emisCode){
     
