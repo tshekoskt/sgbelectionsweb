@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DateEnv, diffDates } from '@fullcalendar/core';
+import { ElectionsService } from '../../_SERVICE/elections.service';
 import * as moment from 'moment';
-import { count } from 'rxjs/operators';
 
 @Component({
   selector: 'app-countdown',
@@ -10,27 +9,36 @@ import { count } from 'rxjs/operators';
 })
 export class CountdownComponent implements OnInit {
 
-  month;
-  days;
-  hours;
-  minutes;
+  month = 0;
+  days = 0;
+  hours = 0;
+  minutes = 0;
 
+  schudule;
   scheduleDate;
   schoolname;
 
-  constructor() { }
+  constructor(private schedulecNomination: ElectionsService) { }
 
   ngOnInit(): void {
 
     let currentDate = new Date();
-    this.scheduleDate = new Date("2021-06-12");
+    let emisCode = localStorage.getItem('EmisCode');
 
-    let duration = this.scheduleDate.getTime() - currentDate.getTime();
-    let countdown = moment.duration(duration, 'seconds');
-    this.month = countdown.months();
-    this.days = countdown.days();
-    this.hours = countdown.hours();
-    this.minutes = countdown.minutes();
+    this.schedulecNomination.getScheduledNominationByEmisCode(emisCode, moment(currentDate).format("YYYY-MM-DD")).subscribe(res => {
+      this.schudule = res;
+      this.scheduleDate = new Date(this.schudule.scheduleDate);
+
+      let duration = this.scheduleDate.getTime() - currentDate.getTime();
+      let countdown = moment.duration(duration, 'seconds');
+
+      this.month = countdown.months();
+      this.days = countdown.days();
+      this.hours = countdown.hours();
+      this.minutes = countdown.minutes();
+
+    })
+
   }
 
 }
