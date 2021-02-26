@@ -9,10 +9,10 @@
             <p class="text-center">We have detected that you have two or more children linked to you in more than one
               school. Please indicate the school at which the elections are taking place below</p>
             <br>
-            <form class="forms-sample">
+            <form class="forms-sample" [formGroup]="form">
               <div class="form-group">
                 <label for="exampleInputEmail1">School Name</label>
-                <select *ngFor="let school of schools" class="form-control mb-3" required placeholder="Please select">
+                <select *ngFor="let school of schools" formControlName="schoolname" name="schoolname" id="schoolname" class="form-control mb-3" required placeholder="Please select">
                   <option value="" selected hidden>Please select</option>
                   <option value="{{school.emisCode}}">{{school.institutionName}}</option>
                 </select>
