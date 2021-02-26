@@ -27,7 +27,7 @@ export class ElectionsService {
 
   ////////////// MEETING service ////////////////////////
   getAllMeetings() {
-    return this.http.get(this.meetings_url);
+    return this.http.get(this.base_url + "/api/Meeting/MeetingList");
   }
 
 
@@ -57,7 +57,7 @@ export class ElectionsService {
   }
 
   getSchoolByParentId(id) {
-    return this.http.get(this.base_url + "/GetChildrenSchoolByParentId?ParentId=" + id, { headers: this.Header })
+    return this.http.get(this.base_url + "/api/Parent/GetChildrenSchoolByParentId?ParentId=" + id, { headers: this.Header })
   }
 
   getLearnersByParentId(id, emisCode) {
@@ -80,9 +80,15 @@ export class ElectionsService {
     
     return this.http.get(this.base_url +"/api/Voting/GetSchoolVotingRoll?EmisCode=700400139");
   }
+  
+  getScheduledNominationByEmisCode(emisCode, date) {
+    return this.http.get(this.base_url + "/api/Nomination/GetScheduledNominationByEmisCode?EmisCode=" + emisCode + "&currentDate=" + date)
+  }
+
 
   /*
 /api/Nomination/GetScheduledInfoByEmisCode?EmisCode=
+/api/Nomination/GetScheduledNominationByEmisCode?EmisCode=700400139&currentDate=2021-01-01
   */
 
 }

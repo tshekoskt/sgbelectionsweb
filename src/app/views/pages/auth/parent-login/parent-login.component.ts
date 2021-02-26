@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { ElectionsService } from '../../_SERVICE/elections.service';
 import { FormBuilder, FormGroup } from "@angular/forms"
-import { isNull } from '@angular/compiler/src/output/output_ast';
 declare var $: any;
 
 @Component({
@@ -45,6 +44,7 @@ export class ParentLoginComponent implements OnInit {
 
       if(res.length > 1){        
       localStorage.setItem('cellnumber', res);
+      localStorage.setItem('Idnumber', this.parentID);
       this.myStorage = localStorage.getItem("cellnumber");
       this.router.navigate(['/auth/parent-otp'])
       } else {
