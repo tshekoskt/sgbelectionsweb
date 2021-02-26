@@ -18,11 +18,12 @@ export class ParantSchoolComponent implements OnInit {
   parentID;
   schools;
   nominations;
+  error = false;
 
 
-  constructor(private router: Router, private parentschoolService: ElectionsService, private formBuilder: FormBuilder, private datepipes: DatePipe) {
+  constructor(private router: Router, private parentschoolService: ElectionsService,  
+              private formBuilder: FormBuilder, private datepipes: DatePipe) {
 
-    // this.date = this.datepipes.transform(this.currentDate, 'yyyy-MM-dd');
   }
 
   form: FormGroup;
@@ -44,30 +45,40 @@ export class ParantSchoolComponent implements OnInit {
 
   }
 
+  schoolNotEmpty(){
+    this.error = false;
+  }
+
   selectSchool() {
     let currentDate = new Date();
     let code = this.form.controls['schoolname'].value;
     let date = this.datepipes.transform(currentDate, 'yyyy-MM-dd');
+    this.error = false;
+
+    if (code == "") {
+      this.error = true;
+    } else {
+
+      this.parentschoolService.getScheduledNominationByEmisCode(code, date).subscribe(res => {
+        console.log(res)
+
+        this.nominations = res;
+        localStorage.setItem('EmisCode', code);
+
+        if (this.nominations.nominationFlag == "IsStarted") {
+          this.router.navigate(['../../electionnomination']);
+        } if (this.nominations.nominationFlag == "IsNotStarted") {
+          this.router.navigate(['../../countdown']);
+        }
+        else {
+          swal.fire({ title: 'No upcoming events', text: 'Sorry the selected school does not have a scheduled upcoming nomination', icon: 'warning' })
+        }
 
 
-    this.parentschoolService.getScheduledNominationByEmisCode(code, date).subscribe(res => {
-      console.log(res)
-
-      this.nominations = res;
-
-      if (this.nominations.nominationFlag == "IsStarted") {
-        this.router.navigate(['../../electionnomination']);
-      } if (this.nominations.nominationFlag == "IsNotStarted") {
-        this.router.navigate(['../../countdown']);
-      }
-      else {
-        swal.fire({title: 'No upcoming events', text: 'Sorry the selected school does not have a scheduled nomination upcoming', icon: 'warning'} )
-      }
+      })
 
 
-    })
-
-
+    }
 
 
 
