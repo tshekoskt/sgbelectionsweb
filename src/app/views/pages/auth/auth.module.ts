@@ -7,7 +7,8 @@ import { AuthComponent } from './auth.component';
 import { ParentLoginComponent } from './parent-login/parent-login.component';
 import { ParentOtpComponent } from './parent-otp/parent-otp.component';
 import { ParantSchoolComponent } from './parant-school/parant-school.component';
-import {ReactiveFormsModule} from "@angular/forms"
+import {ReactiveFormsModule} from "@angular/forms";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 const routes: Routes = [
   {
@@ -48,7 +49,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot(),    
   ]
 })
 export class AuthModule { }
