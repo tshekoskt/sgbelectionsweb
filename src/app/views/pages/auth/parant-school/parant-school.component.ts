@@ -3,23 +3,31 @@ import { Component, OnInit, Pipe } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormBuilder, FormGroup } from "@angular/forms"
 import { ElectionsService } from '../../_SERVICE/elections.service';
+import swal from 'sweetalert2'
 
 
 @Component({
   selector: 'app-parant-school',
   templateUrl: './parant-school.component.html',
-  styleUrls: ['./parant-school.component.scss']
+  styleUrls: ['./parant-school.component.scss'],
+  providers: [DatePipe]
 })
 export class ParantSchoolComponent implements OnInit {
 
   nominationStarted = "true";
   parentID;
   schools;
+  nominations;
 
-  constructor(private router: Router, private parentschoolService: ElectionsService, private formBuilder: FormBuilder) { }
+
+  constructor(private router: Router, private parentschoolService: ElectionsService, private formBuilder: FormBuilder, private datepipes: DatePipe) {
+
+    // this.date = this.datepipes.transform(this.currentDate, 'yyyy-MM-dd');
+  }
 
   form: FormGroup;
-  datepipe: DatePipe;
+
+
 
   ngOnInit(): void {
 
@@ -37,25 +45,23 @@ export class ParantSchoolComponent implements OnInit {
   }
 
   selectSchool() {
+    let currentDate = new Date();
     let code = this.form.controls['schoolname'].value;
+    let date = this.datepipes.transform(currentDate, 'yyyy-MM-dd');
 
-    let date = new Date();
-    let form = date.getFullYear() + "-" + date.getUTCMonth() + "-" + date.getDate()
-    // let test = [form | this.datepipe: "dd:MMM:yyyy hh-mm-ss z"]
-    // let test = this.datepipe.transform(date);
-    
-    // console.log(date.getFullYear() + "-" + date.getUTCMonth() + "-" + date.getDate())
-    // Date.
-    // console.log(test)
-    
 
-    this.parentschoolService.getScheduledNominationByEmisCode(code, form).subscribe(res => {
+    this.parentschoolService.getScheduledNominationByEmisCode(code, date).subscribe(res => {
       console.log(res)
 
-      if (this.nominationStarted == "true") {
-        // this.router.navigate(['../../electionnomination']);
-      } else {
-        // this.router.navigate(['../../countdown']);
+      this.nominations = res;
+
+      if (this.nominations.nominationFlag == "IsStarted") {
+        this.router.navigate(['../../electionnomination']);
+      } if (this.nominations.nominationFlag == "IsNotStarted") {
+        this.router.navigate(['../../countdown']);
+      }
+      else {
+        swal.fire({title: 'No upcoming events', text: 'Sorry the selected school does not have a scheduled nomination upcoming', icon: 'warning'} )
       }
 
 

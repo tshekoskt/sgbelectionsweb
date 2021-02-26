@@ -40,6 +40,7 @@
     "bootstrap": "^4.6.0",
     "chart.js": "^2.9.4",
     "cropperjs": "^1.5.11",
+    "datatable": "^2.0.2",
     "datatables.net": "^1.10.23",
     "datatables.net-buttons": "^1.6.5",
     "datatables.net-buttons-dt": "^1.6.5",
