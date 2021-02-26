@@ -3,14 +3,12 @@ import { Router,ActivatedRoute } from '@angular/router'
 import { ElectionsService } from '../../_SERVICE/elections.service';
 import {FormBuilder, FormGroup} from "@angular/forms"
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
 @Component({
   selector: 'app-elections-overview',
   templateUrl: './elections-overview.component.html',
   styleUrls: ['./elections-overview.component.scss']
 })
 export class ElectionsOverviewComponent implements OnInit {
-
   returnUrl: any;
   parentID: any;
   idnumber: any;
@@ -23,8 +21,8 @@ export class ElectionsOverviewComponent implements OnInit {
   nominee:any;
   votersRoll:any
   nomineeEditForm: FormGroup;
-  votersRollForm:FormGroup
-
+  votersRollEditForm:FormGroup;
+  emis:any;
 
   constructor(private router: Router, private route: ActivatedRoute,private _parent: ElectionsService, private formBuilder: FormBuilder,private modalService: NgbModal,){ }
  
@@ -39,7 +37,7 @@ export class ElectionsOverviewComponent implements OnInit {
 
     });
 
-    this.votersRollForm = this.formBuilder.group({
+    this.votersRollEditForm = this.formBuilder.group({
       firstNameVottersRoll: "",
       lastNameVottersRoll:"",
       institutionVottersRoll: "",
@@ -48,13 +46,14 @@ export class ElectionsOverviewComponent implements OnInit {
 
     });
    
-    
-    this._parent.getAllvoterRoll().subscribe((res: any) => {
+    this.emis= 700400139;
+ 
+    this._parent.getAllvoterRoll(this.emis).subscribe((res: any) => {
       this.data = res;
 
     });
 
-    this._parent.getAllNorminations().subscribe((res: any) => {
+    this._parent.getAllNorminations(this.emis).subscribe((res: any) => {
       this.nominations = res;
       //alert(this.nominations);
 
@@ -73,9 +72,6 @@ export class ElectionsOverviewComponent implements OnInit {
       lengthMenu : [5, 10, 25],
       processing: true
     };
-
-  
-
      
   }
 
