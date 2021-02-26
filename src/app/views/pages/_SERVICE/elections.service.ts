@@ -51,6 +51,10 @@ export class ElectionsService {
 
 
   ////////////// PARENT service ////////////////////////
+  updateParentInfo(){
+
+    return this.http.get(this.base_url + "/api/Parent/Update?EmisCode=700400139", { headers: this.Header })
+  }
 
   getParentInfo(id) {
     return this.http.get(this.base_url + "/GetParentInfo?IDNumber=" + id, { headers: this.Header })
@@ -80,7 +84,7 @@ export class ElectionsService {
     
     return this.http.get(this.base_url +"/api/Voting/GetSchoolVotingRoll?EmisCode=700400139");
   }
-  
+
   getScheduledNominationByEmisCode(emisCode, date) {
     return this.http.get(this.base_url + "/api/Nomination/GetScheduledNominationByEmisCode?EmisCode=" + emisCode + "&currentDate=" + date)
   }
@@ -90,5 +94,7 @@ export class ElectionsService {
 /api/Nomination/GetScheduledInfoByEmisCode?EmisCode=
 /api/Nomination/GetScheduledNominationByEmisCode?EmisCode=700400139&currentDate=2021-01-01
   */
+
+ 
 
 }

@@ -360,7 +360,7 @@
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+                <button type="button" class="btn btn-secondary" (click)="modal.close('by: close button')">Close</button>
                 <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
             </form>
@@ -377,7 +377,7 @@
   
           </div>
           <div class="modal-body">
-            <form [formGroup]="votersRollForm" (ngSubmit)="onSubmitNominee()">
+            <form [formGroup]="votersRollEditForm" (ngSubmit)="onSubmitNominee()">
               <div class="form-group">
                 <label for="firstNameVottersRoll">First Name</label>
                 <input type="text" formControlName="firstNameNominee" class="form-control" id="firstNameVottersRoll" placeholder="{{votersRoll.firstName}} ">
@@ -401,7 +401,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('by: close button')">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </ng-template>
