@@ -147,22 +147,62 @@
                 <a ngbNavLink>Nominees</a>
                 <ng-template ngbNavContent>
                   <h6 class="mb-2">Nominees</h6>
-                  <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-                    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip
-                    jean shorts
-                    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.
-                  </p>
+                  <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>I.D/Passport</th>
+                        <th>School Name</th>
+                        <th>Cellphone Number</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <tr *ngFor="let nomination of nominations">
+                           <td>{{nomination.firstName}}  {{nomination.lastName}}</td>
+                           <td>{{nomination.idNumber}}</td>
+                           <td>{{nomination.institutionName}}</td>
+                           <td>{{nomination.mobileNo}}</td>
+                           <td>
+                              <a><i class="mdi mdi-eye" ></i></a>
+                              &nbsp;&nbsp;
+                              <a><i class="mdi mdi-pencil text-dark"  (click)="editNomination(nomination)"  (click)="openBasicModal(basicModal)"></i></a>
+                            </td>
+                       </tr>
+                    </tbody>
+                  </table>
                 </ng-template>
               </li>
               <li [ngbNavItem]="3">
                 <a ngbNavLink>Voters Roll</a>
                 <ng-template ngbNavContent>
                   <h6 class="mb-2">Voters Roll</h6>
-                  <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
-                    Nulla facilisi.
-                    Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
-                    congue et odio.
-                    Duis pharetra et nisl at faucibus.</p>
+                  <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>I.D/Passport</th>
+                        <th>School Name</th>
+                        <th>Cellphone Number</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <tr *ngFor="let voteroll of data">
+                           <td>{{voteroll.firstName}}  {{voteroll.lastName}}</td>
+                           <td>{{voteroll.idNumber}}</td>
+                           <td>{{voteroll.institutionName}}</td>
+                           <td>{{voteroll.mobileNo}}</td>
+                           <td>
+                              <a><i class="mdi mdi-eye" ></i></a>
+                              &nbsp;&nbsp;
+                              <a><i class="mdi mdi-pencil text-dark" (click)="editVottersRoll(voteroll)"  (click)="openBasicModal(vorterall)"></i></a>
+                            </td>
+                       </tr>
+                    </tbody>
+                  </table>
                 </ng-template>
               </li>
               <li [ngbNavItem]="4">
@@ -290,3 +330,80 @@
     </div>
   </div>
 </div>
+        <!-- Modal -->
+        <ng-template #basicModal let-modal>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Nomination</h5>
+  
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="nomineeEditForm" (ngSubmit)="onSubmitNominee()">
+              <div class="form-group">
+                <label for="nominationName">First Name</label>
+                <input type="text" formControlName="firstNameNominee" class="form-control" id="nominationName" placeholder="{{nominee.firstName}} ">
+              </div>
+              <div class="form-group"> 
+                <label for="nominationSurname">Last Name</label>
+                <input type="text" formControlName="lastNameNominee" class="form-control" id="nominationSurname" placeholder="{{nominee.lastName}} ">
+              </div>
+              <div class="form-group">
+                <label for="nominationSurname">Institution Name</label>
+                <input type="text" formControlName="institutionNameNominee" class="form-control" id="nominationInstitutionName" placeholder="{{nominee.institutionName}} ">
+              </div>
+              <div class="form-group">
+                <label for="NomineeIdNumber">ID Number</label>
+                <input type="text" formControlName="idNumberNominee" class="form-control" id="NomineeIdNumber" placeholder="{{nominee.idNumber}} ">
+              </div>
+              <div class="form-group">
+                <label for="NomineeMobileNo">Mobile Number</label>
+                <input type="text" formControlName="mobileNonNominee" class="form-control" id="NomineeMobileNo" placeholder="{{nominee.mobileNo}} ">
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+          </div>
+          
+        </ng-template>
+        <!-- Close result -->
+        <p *ngIf="basicModalCloseResult != ''" class="mt-2">{{basicModalCloseResult}}</p>
+
+         <!-- Modal -->
+         <ng-template #vorterall let-modal>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Nomination</h5>
+  
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="votersRollForm" (ngSubmit)="onSubmitNominee()">
+              <div class="form-group">
+                <label for="firstNameVottersRoll">First Name</label>
+                <input type="text" formControlName="firstNameNominee" class="form-control" id="firstNameVottersRoll" placeholder="{{votersRoll.firstName}} ">
+              </div>
+              <div class="form-group"> 
+                <label for="nominationSurname">Last Name</label>
+                <input type="text" formControlName="lastNameVottersRoll" class="form-control" id="nominationSurname" placeholder="{{votersRoll.lastName}} ">
+              </div>
+              <div class="form-group">
+                <label for="nominationSurname">Institution Name</label>
+                <input type="text" formControlName="institutionVottersRoll" class="form-control" id="nominationInstitutionName" placeholder="{{votersRoll.institutionName}} ">
+              </div>
+              <div class="form-group">
+                <label for="NomineeIdNumber">ID Number</label>
+                <input type="text" formControlName="idNumberVottersRoll" class="form-control" id="NomineeIdNumber" placeholder="{{votersRoll.idNumber}} ">
+              </div>
+              <div class="form-group">
+                <label for="NomineeMobileNo">Mobile Number</label>
+                <input type="text" formControlName="mobileNonVottersRoll" class="form-control" id="NomineeMobileNo" placeholder="{{votersRoll.mobileNo}} ">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </ng-template>
+        <!-- Close result -->
+        <p *ngIf="basicModalCloseResult != ''" class="mt-2">{{basicModalCloseResult}}</p>
