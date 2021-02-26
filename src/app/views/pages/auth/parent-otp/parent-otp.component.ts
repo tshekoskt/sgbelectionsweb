@@ -14,7 +14,10 @@ export class ParentOtpComponent implements OnInit {
   cellnumber;
   OTP;
   OTPvalid;
+  Idnumber;
   error = false;
+  jsonData;
+  parent;
 
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder, private OTPService: ElectionsService) { }
 
@@ -26,6 +29,11 @@ export class ParentOtpComponent implements OnInit {
     });
 
     this.cellnumber = localStorage.getItem('cellnumber');
+    this.Idnumber = localStorage.getItem('Idnumber');
+    this.jsonData = {
+      idNumber: this.Idnumber,
+      mobileNo: this.cellnumber
+    }
   }
 
   verifyOTP() {
@@ -38,7 +46,14 @@ export class ParentOtpComponent implements OnInit {
 
       if (this.OTPvalid == true) {
         this.error = false;
-        this.router.navigate(['/auth/parentschool']);
+
+        this.OTPService.authenticateParentIDNmber(this.jsonData).subscribe(data => {
+
+          this.parent = data
+          localStorage.setItem('ParentID', this.parent.user.parentID);
+          this.router.navigate(['/auth/parentschool']);
+        })
+
       } else {
         this.error = true;
       }
@@ -46,36 +61,6 @@ export class ParentOtpComponent implements OnInit {
 
     })
 
-    // this.OTPService.authParentOTP(this.cellnumber,this.OTP).subscribe(res => {
-    //   console.log(res);
-
-    //   if(res == "true" || res == "True"){
-    //     this.router.navigate(['../../electionnomination']);
-    //   } else {
-    //     console.log("Invalid");
-    //   }
-
-    //   // if(res) {
-
-
-    //   //   if(res.lenth > 1){
-
-    //   //   } else
-    //   //     if(res.length < "date") {
-
-    //   //     } else {
-
-    //   //     }
-
-
-    //   // } else {
-    //   //   console.log("Error")
-    //   // }
-
-    // })
-
-
-    // 
   }
 
   cancel() {

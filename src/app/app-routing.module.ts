@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./views/pages/_election-nomination/election-nomination.module').then(m => m.ElectionNominationModule)
   },
   {
+    path: 'elections',
+    loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
+  },
+  {
     path: '',
     component: BaseComponent,
     canActivate: [AuthGuard],
@@ -30,10 +34,6 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/pages/_dashboard/dashboard.module').then(m => m.DashboardModule)
-      },
-      {
-        path: 'elections',
-        loadChildren: () => import('./views/pages/_elections/elections.module').then(m => m.ElectionsModule)
       },
       {
         path: 'documents',

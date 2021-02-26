@@ -13,7 +13,8 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import {ReactiveFormsModule} from "@angular/forms"
+import {ReactiveFormsModule} from "@angular/forms";
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ReactiveFormsModule} from "@angular/forms"
     BrowserAnimationsModule,
     LayoutModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   providers: [
     AuthGuard,
