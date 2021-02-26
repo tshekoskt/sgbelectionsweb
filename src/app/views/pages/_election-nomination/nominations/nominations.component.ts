@@ -43,8 +43,23 @@ export class NominationsComponent implements OnInit {
     this._nominationService.getProposedNominationsByEmisCode(700400139,5352).subscribe(res => {
 
       this.nominations = res;
-console.log(this.nominations);
+    console.log(this.nominations);
     });
+
+    this._nominationService[] = [
+      {
+        firstName: "Timothy Mabina",
+        lastName: "Mabina"
+      },
+      {
+        firstName: "Tshepo Mmutlwane",
+        lastName: "TrMmutlwaneue"
+      },
+      {
+        firstName: "Karabo Letsoko",
+        lastName: "Letsoko"
+      }
+    ]
 
     this._nominationService.getNominationsToBeSecondedByEmisCode(700400139,5352).subscribe(sec => {
 
