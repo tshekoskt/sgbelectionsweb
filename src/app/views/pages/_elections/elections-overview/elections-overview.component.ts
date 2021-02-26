@@ -58,21 +58,18 @@ export class ElectionsOverviewComponent implements OnInit {
       //alert(this.nominations);
 
     });
-    
+   
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 5,
-      lengthMenu : [5, 10, 25],
-      processing: true
+      pageLength: 10,
+      processing: true,
+      dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'print'
+        ]
     };
 
-    this.dtOptionsNom = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      lengthMenu : [5, 10, 25],
-      processing: true
-    };
-     
+  
   }
 
   openBasicModal(content) {

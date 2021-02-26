@@ -12,19 +12,23 @@
             <form class="forms-sample" [formGroup]="form">
               <div class="form-group">
                 <label for="exampleInputEmail1">School Name</label>
-                <select *ngFor="let school of schools" formControlName="schoolname" name="schoolname" id="schoolname" class="form-control mb-3" required placeholder="Please select">
+                <select *ngFor="let school of schools" (change)="schoolNotEmpty()" formControlName="schoolname" name="schoolname" id="schoolname"
+                  class="form-control mb-3" required placeholder="Please select">
                   <option value="" selected hidden>Please select</option>
                   <option value="{{school.emisCode}}">{{school.institutionName}}</option>
                 </select>
               </div>
+              <div *ngIf="error" class="error_text">
+                <p class="text-danger">Please select a school to proceed forward</p>
+              </div>
               <div class="row justify-content-center">
                 <div class="col-md-4">
                   <!-- <button (click)="selectSchool()" class="btn btn-primary">Submit</button> -->
-                  <input type="button" (click)="selectSchool()" class="btn btn-primary" value="Submit"/>
+                  <input type="button" (click)="selectSchool()" class="btn btn-primary" value="Submit" />
                 </div>
                 <div class="col-4">
-                  <!-- <button type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button> -->
-                  <input type="button" (click)="cancel()" class="btn btn-danger" value="Cancel"/>
+                  <!--  <button type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button> -->
+                  <input type="button" (click)="cancel()" class="btn btn-danger" value="Cancel" />
                 </div>
 
               </div>
