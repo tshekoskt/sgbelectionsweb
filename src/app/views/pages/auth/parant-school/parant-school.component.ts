@@ -21,8 +21,8 @@ export class ParantSchoolComponent implements OnInit {
   error = false;
 
 
-  constructor(private router: Router, private parentschoolService: ElectionsService,  
-              private formBuilder: FormBuilder, private datepipes: DatePipe) {
+  constructor(private router: Router, private parentschoolService: ElectionsService,
+    private formBuilder: FormBuilder, private datepipes: DatePipe) {
 
   }
 
@@ -45,7 +45,7 @@ export class ParantSchoolComponent implements OnInit {
 
   }
 
-  schoolNotEmpty(){
+  schoolNotEmpty() {
     this.error = false;
   }
 
@@ -65,9 +65,10 @@ export class ParantSchoolComponent implements OnInit {
         this.nominations = res;
         localStorage.setItem('EmisCode', code);
 
-        if (this.nominations.nominationFlag == "IsStarted") {
+        if (this.nominations.nominationFlag == "HasStarted") {
           this.router.navigate(['../../electionnomination']);
-        } if (this.nominations.nominationFlag == "IsNotStarted") {
+        }
+        if (this.nominations.nominationFlag == "IsNotStarted") {
           this.router.navigate(['../../countdown']);
         }
         else {

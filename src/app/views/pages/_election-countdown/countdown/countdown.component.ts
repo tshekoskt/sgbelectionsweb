@@ -30,7 +30,7 @@ export class CountdownComponent implements OnInit {
       this.scheduleDate = new Date(this.schudule.scheduleDate);
 
       let duration = this.scheduleDate.getTime() - currentDate.getTime();
-      let countdown = moment.duration(duration, 'seconds');
+      let countdown = moment.duration(duration, 'milliseconds');
 
       this.month = countdown.months();
       this.days = countdown.days();
