@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { ParentLoginComponent } from './parent-login/parent-login.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { VerifyUserOtpComponent } from './verify-user-otp/verify-user-otp.component';
 import { ParentSchoolComponent } from './parent-school/parent-school.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
@@ -42,6 +43,10 @@ const routes: Routes = [
         component: VerifyOtpComponent
       },
       {
+        path: 'verify-user-otp',
+        component: VerifyUserOtpComponent
+      },
+      {
         path: 'parentschool',
         component: ParentSchoolComponent
       }
@@ -54,6 +59,7 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     VerifyOtpComponent,
+    VerifyUserOtpComponent,
     AuthComponent,
     ParentLoginComponent,
     ParentLoginComponent,
