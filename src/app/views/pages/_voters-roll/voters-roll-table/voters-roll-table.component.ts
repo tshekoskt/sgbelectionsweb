@@ -30,6 +30,24 @@ export class VotersRollTableComponent implements OnInit {
   ngOnInit(): void {
 
 
+    this.nomineeEditForm = this.formBuilder.group({
+      firstNameNominee: "",
+      lastNameNominee:"",
+      institutionNameNominee: "",
+      idNumberNominee: "",
+      mobileNonNominee : ""
+
+    });
+
+    this.votersRollEditForm = this.formBuilder.group({
+      firstNameVottersRoll: "",
+      lastNameVottersRoll:"",
+      institutionVottersRoll: "",
+      idNumberVottersRoll: "",
+      mobileNonVottersRoll : ""
+
+    });
+
     this.emiscode= 700400139;
  
     this.electionService.getAllVotersRoll(this.emiscode).subscribe((res: any) => {

@@ -74,7 +74,7 @@ export class ElectionsOverviewComponent implements OnInit {
 
   openBasicModal(content) {
     this.modalService.open(content, {}).result.then((result) => {
-      this.basicModalCloseResult = "Modal closed" + result
+      //this.basicModalCloseResult = "Modal closed" + result
     }).catch((res) => {});
   }
 
