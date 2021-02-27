@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParantSchoolComponent } from './parant-school.component';
+import { VerifyOtpComponent } from './verify-otp.component';
 
-describe('ParantSchoolComponent', () => {
-  let component: ParantSchoolComponent;
-  let fixture: ComponentFixture<ParantSchoolComponent>;
+describe('VerifyOtpComponent', () => {
+  let component: VerifyOtpComponent;
+  let fixture: ComponentFixture<VerifyOtpComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParantSchoolComponent ]
+      declarations: [ VerifyOtpComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ParantSchoolComponent);
+    fixture = TestBed.createComponent(VerifyOtpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

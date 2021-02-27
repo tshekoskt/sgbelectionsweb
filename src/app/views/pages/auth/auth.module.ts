@@ -5,8 +5,8 @@ import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { ParentLoginComponent } from './parent-login/parent-login.component';
-import { ParentOtpComponent } from './parent-otp/parent-otp.component';
-import { ParantSchoolComponent } from './parant-school/parant-school.component';
+import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { ParentSchoolComponent } from './parent-school/parent-school.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { PrincipalLoginComponent } from './principal-login/principal-login.component';
@@ -38,24 +38,33 @@ const routes: Routes = [
         component: RegisterComponent
       },
       {
-        path: 'parent-otp',
-        component: ParentOtpComponent
+        path: 'verify-otp',
+        component: VerifyOtpComponent
       },
       {
         path: 'parentschool',
-        component: ParantSchoolComponent
+        component: ParentSchoolComponent
       }
     ]
   },
 ]
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent,ParentOtpComponent, AuthComponent, ParentLoginComponent,ParentLoginComponent, ParentOtpComponent, ParantSchoolComponent, PrincipalLoginComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    VerifyOtpComponent,
+    AuthComponent,
+    ParentLoginComponent,
+    ParentLoginComponent,
+    ParentSchoolComponent,
+    PrincipalLoginComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot(),    
+    SweetAlert2Module.forRoot(),
   ]
 })
 export class AuthModule { }
