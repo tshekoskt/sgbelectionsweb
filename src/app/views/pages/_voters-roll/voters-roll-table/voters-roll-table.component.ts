@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 import { ElectionsService } from '../../_SERVICE/elections.service';
 
 @Component({
@@ -35,7 +36,8 @@ export class VotersRollTableComponent implements OnInit {
       lastNameNominee:"",
       institutionNameNominee: "",
       idNumberNominee: "",
-      mobileNonNominee : ""
+      mobileNonNominee : "",
+      mobileBlackListed : ""
 
     });
 
@@ -44,11 +46,13 @@ export class VotersRollTableComponent implements OnInit {
       lastNameVottersRoll:"",
       institutionVottersRoll: "",
       idNumberVottersRoll: "",
-      mobileNonVottersRoll : ""
+      mobileNonVottersRoll : "",
+      mobileBlackListed : ""
 
     });
 
     this.emiscode= 700400139;
+    //this.emiscode = localStorage.getItem('EmisCode');
  
     this.electionService.getAllVotersRoll(this.emiscode).subscribe((res: any) => {
       console.log(res);
@@ -103,11 +107,21 @@ export class VotersRollTableComponent implements OnInit {
   }
 
   onSubmitNominee(){
-    alert();
+    
+    this.electionService.saveVoterInformation(this.nominee);
+    Swal.fire(
+      'Confirmation!',
+      'Information was saved.',
+      'success'
+    )
   }
 
   onSubmitVotersRoll(){
-    alert();
+    Swal.fire(
+      'Confirmation!',
+      'Information was saved.',
+      'success'
+    )
   }
 
     /* const dataTable = new DataTable("#dataTableExample");
