@@ -5,46 +5,46 @@ export const MENU: MenuItem[] = [
   //   label: 'Main',
   //   isTitle: true
   // },
-  {
-    label: 'Dashboard',
-    icon: 'home',
-    link: '/dashboard'
-  },
-  {
-    label: 'Elections',
-    icon: 'home',
-    link: '/elections'
-  },
-  {
-    label: 'Documents',
-    icon: 'home',
-    link: '/documents'
-  },
-  {
-    label: 'Meetings',
-    icon: 'home',
-    link: '/meetings'
-  },
-  {
-    label: 'Handover School Reports',
-    icon: 'home',
-    link: '/handover'
-  },
-  {
-    label: 'Events',
-    icon: 'home',
-    link: '/dashboard'
-  },
-  {
-    label: 'District Memos',
-    icon: 'home',
-    link: '/districtmemos'
-  },
-  {
-    label: 'User Management',
-    icon: 'home',
-    link: '/usermanagement'
-  },
+  // {
+  //   label: 'Dashboard',
+  //   icon: 'home',
+  //   link: '/dashboard'
+  // },
+  // {
+  //   label: 'Elections',
+  //   icon: 'home',
+  //   link: '/elections'
+  // },
+  // {
+  //   label: 'Documents',
+  //   icon: 'home',
+  //   link: '/documents'
+  // },
+  // {
+  //   label: 'Meetings',
+  //   icon: 'home',
+  //   link: '/meetings'
+  // },
+  // {
+  //   label: 'Handover School Reports',
+  //   icon: 'home',
+  //   link: '/handover'
+  // },
+  // {
+  //   label: 'Events',
+  //   icon: 'home',
+  //   link: '/dashboard'
+  // },
+  // {
+  //   label: 'District Memos',
+  //   icon: 'home',
+  //   link: '/districtmemos'
+  // },
+  // {
+  //   label: 'User Management',
+  //   icon: 'home',
+  //   link: '/usermanagement'
+  // },
   {
     label: ' ',
     isTitle: true
