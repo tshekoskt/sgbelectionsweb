@@ -91,7 +91,7 @@ getNominationsToBeSecondedByEmisCode(emisCode, id) {
 }   
 
   ///////////// Voters Roll service/////////////////////
-  getAllvoterRoll(emisCode){
+  getAllVotersRoll(emisCode){
     
     return this.http.get(this.base_url +"/api/Voting/GetSchoolVotingRoll?EmisCode=" + emisCode  );
   }

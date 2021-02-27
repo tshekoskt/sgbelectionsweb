@@ -48,7 +48,7 @@ export class ElectionsOverviewComponent implements OnInit {
    
     this.emis= 700400139;
  
-    this._parent.getAllvoterRoll(this.emis).subscribe((res: any) => {
+    this._parent.getAllVotersRoll(this.emis).subscribe((res: any) => {
       this.data = res;
 
     });

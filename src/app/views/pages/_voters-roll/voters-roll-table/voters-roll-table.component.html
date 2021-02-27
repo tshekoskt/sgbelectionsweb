@@ -1,9 +1,3 @@
-<nav class="page-breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink=".">Voter's Roll</a></li>
-  </ol>
-</nav>
-
 
 <h4 class="card-title text-primary">Voters Roll</h4>
 <div class="row">
@@ -87,8 +81,8 @@
             </div>
           </div>
         </div>
-        <div class="table-responsive">
-          <table id="dataTableExample" class="table">
+
+<!--           <table id="dataTableExample" class="table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -119,8 +113,36 @@
                 <th></th>
               </tr>
             </tfoot>
+          </table> -->
+
+          <table id='table' class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>I.D/Passport</th>
+                <th>School Name</th>
+                <th>Cellphone Number</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+             <tr *ngFor="let voteroll of votersRoll">
+                   <td>{{voteroll.firstName}}  {{voteroll.lastName}}</td>
+                   <td>{{voteroll.idNumber}}</td>
+                   <td>{{voteroll.institutionName}}</td>
+                   <td>{{voteroll.mobileNo}}</td>
+                   <td>
+                      <a><i class="mdi mdi-eye" ></i></a>
+                      &nbsp;&nbsp;
+                      <a><i class="mdi mdi-pencil text-dark" (click)="editVottersRoll(voteroll)"  (click)="openBasicModal(voteroll)"></i></a>
+                    </td>
+               </tr>
+            </tbody>
           </table>
-        </div>
+        
+
+
       </div>
     </div>
   </div>
