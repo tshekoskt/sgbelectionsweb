@@ -22,6 +22,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { Routes, RouterModule } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import {DataTablesModule} from 'angular-datatables';
 
 import { VotersRollComponent } from './voters-roll.component';
 import { VotersRollTableComponent } from './voters-roll-table/voters-roll-table.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
     FeahterIconModule,
     QuillModule.forRoot(), // ngx-quill
     ArchwizardModule, // angular-archwizard
+    DataTablesModule
   ],
   providers: [
     {
