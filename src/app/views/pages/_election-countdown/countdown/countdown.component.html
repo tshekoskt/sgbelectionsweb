@@ -1,38 +1,37 @@
-
 <div class="row w-100 mx-0 auth-page">
 
-    <div class="col-md-8 col-xl-6 mx-auto">
-      <div class="card">
-        <div class="row justify-content-center">
-          <div class="col-md-8 pl-md-0">
-            <div class="auth-form-wrapper px-4 py-5">
-              <img src="../assets/images/DepartmentEducationLogo.png " >
-              <p class="text-center">Election scheduled to start on</p>
-              <br>
-              <h5 class="text-muted font-weight-normal mb-4 text-center">12 June 2021</h5>
-              <p class="text-center">Time left until election starts</p>
-              <div class="row text-center">.
-                <div class="col-3">
-                    <h3 class="text-primary">{{month}}</h3>
-                    <label for="month">Month</label>
-                </div>
-                <div class="col-2">
-                    <h3 class="text-primary">{{days}}</h3>
-                    <label for="Days">Days</label>
-                </div>
-                <div class="col-3">
-                    <h3 class="text-primary">{{hours}}</h3>
-                    <label for="Hours">Hours</label>
-                </div>
-                <div class="col-3">
-                    <h3 class="text-primary">{{minutes}}</h3>
-                    <label for="Minutes">Minutes</label>
-                </div>
+  <div class="col-md-8 col-xl-6 mx-auto">
+    <div class="card">
+      <div class="row justify-content-center">
+        <div class="col-md-8 pl-md-0">
+          <div class="auth-form-wrapper px-4 py-5">
+            <img src="../assets/images/DepartmentEducationLogo.png ">
+            <p class="text-center">Election scheduled to start on</p>
+            <br>
+            <h5 class="text-muted font-weight-normal mb-4 text-center"> {{scheduleDate | date:'dd MMMM YYYY'}}</h5>
+            <p class="text-center">Time left until election starts</p>
+            <div class="row text-center">.
+              <div class="col-2">
+                <h3 class="text-primary">{{month}}</h3>
+                <label for="month">Month</label>
+              </div>
+              <div class="col-3">
+                <h3 class="text-primary">{{days}}</h3>
+                <label for="Days">Days</label>
+              </div>
+              <div class="col-3">
+                <h3 class="text-primary">{{hours}}</h3>
+                <label for="Hours">Hours</label>
+              </div>
+              <div class="col-3">
+                <h3 class="text-primary">{{minutes}}</h3>
+                <label for="Minutes">Minutes</label>
+              </div>
 
-               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

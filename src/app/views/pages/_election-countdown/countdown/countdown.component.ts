@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectionsService } from '../../_SERVICE/elections.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-countdown',
@@ -7,14 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountdownComponent implements OnInit {
 
-  month = "00";
-  days = "12";
-  hours = "09";
-  minutes = "49"
+  month = 0;
+  days = 0;
+  hours = 0;
+  minutes = 0;
 
-  constructor() { }
+  schudule;
+  scheduleDate;
+  schoolname;
+
+  constructor(private schedulecNomination: ElectionsService) { }
 
   ngOnInit(): void {
+
+    let currentDate = new Date();
+    let emisCode = localStorage.getItem('EmisCode');
+
+    this.schedulecNomination.getScheduledNominationByEmisCode(emisCode, moment(currentDate).format("YYYY-MM-DD")).subscribe(res => {
+      this.schudule = res;
+      this.scheduleDate = new Date(this.schudule.scheduleDate);
+
+      let duration = this.scheduleDate.getTime() - currentDate.getTime();
+      let countdown = moment.duration(duration, 'milliseconds');
+
+      this.month = countdown.months();
+      this.days = countdown.days();
+      this.hours = countdown.hours();
+      this.minutes = countdown.minutes();
+
+    })
+
   }
 
 }

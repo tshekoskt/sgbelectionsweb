@@ -4,6 +4,7 @@ import { Router } from '@angular/router'
 import { FormBuilder, FormGroup } from "@angular/forms"
 import { ElectionsService } from '../../_SERVICE/elections.service';
 import swal from 'sweetalert2'
+import { isNull } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -21,8 +22,8 @@ export class ParantSchoolComponent implements OnInit {
   error = false;
 
 
-  constructor(private router: Router, private parentschoolService: ElectionsService,  
-              private formBuilder: FormBuilder, private datepipes: DatePipe) {
+  constructor(private router: Router, private parentschoolService: ElectionsService,
+    private formBuilder: FormBuilder, private datepipes: DatePipe) {
 
   }
 
@@ -45,7 +46,7 @@ export class ParantSchoolComponent implements OnInit {
 
   }
 
-  schoolNotEmpty(){
+  schoolNotEmpty() {
     this.error = false;
   }
 
@@ -63,15 +64,22 @@ export class ParantSchoolComponent implements OnInit {
         console.log(res)
 
         this.nominations = res;
+
         localStorage.setItem('EmisCode', code);
 
-        if (this.nominations.nominationFlag == "IsStarted") {
-          this.router.navigate(['../../electionnomination']);
-        } if (this.nominations.nominationFlag == "IsNotStarted") {
-          this.router.navigate(['../../countdown']);
-        }
-        else {
+
+        if (this.nominations.nominationFlag == null || this.nominations.nominationFlag == "") {
+          console.log("NULL")
           swal.fire({ title: 'No upcoming events', text: 'Sorry the selected school does not have a scheduled upcoming nomination', icon: 'warning' })
+
+        } else {
+          console.log("Not NULL")
+          if (this.nominations.nominationFlag == "HasStarted") {
+            this.router.navigate(['../../electionnomination']);
+
+          } else if (this.nominations.nominationFlag == "IsNotStarted") {
+            this.router.navigate(['../../countdown']);
+          }
         }
 
 
