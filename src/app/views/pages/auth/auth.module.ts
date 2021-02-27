@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { ParentLoginComponent } from './parent-login/parent-login.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
-import { ParantSchoolComponent } from './parant-school/parant-school.component';
+import { ParentSchoolComponent } from './parent-school/parent-school.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { PrincipalLoginComponent } from './principal-login/principal-login.component';
@@ -43,7 +43,7 @@ const routes: Routes = [
       },
       {
         path: 'parentschool',
-        component: ParantSchoolComponent
+        component: ParentSchoolComponent
       }
     ]
   },
@@ -57,7 +57,7 @@ const routes: Routes = [
     AuthComponent,
     ParentLoginComponent,
     ParentLoginComponent,
-    ParantSchoolComponent,
+    ParentSchoolComponent,
     PrincipalLoginComponent
   ],
   imports: [

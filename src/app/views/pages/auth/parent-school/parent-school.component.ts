@@ -8,12 +8,12 @@ import { isNull } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
-  selector: 'app-parant-school',
-  templateUrl: './parant-school.component.html',
-  styleUrls: ['./parant-school.component.scss'],
+  selector: 'app-parent-school',
+  templateUrl: './parent-school.component.html',
+  styleUrls: ['./parent-school.component.scss'],
   providers: [DatePipe]
 })
-export class ParantSchoolComponent implements OnInit {
+export class ParentSchoolComponent implements OnInit {
 
   nominationStarted = "true";
   parentID;

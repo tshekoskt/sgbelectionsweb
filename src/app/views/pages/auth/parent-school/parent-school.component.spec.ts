@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParantSchoolComponent } from './parant-school.component';
+import { ParentSchoolComponent } from './parent-school.component';
 
-describe('ParantSchoolComponent', () => {
-  let component: ParantSchoolComponent;
-  let fixture: ComponentFixture<ParantSchoolComponent>;
+describe('ParentSchoolComponent', () => {
+  let component: ParentSchoolComponent;
+  let fixture: ComponentFixture<ParentSchoolComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParantSchoolComponent ]
+      declarations: [ ParentSchoolComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ParantSchoolComponent);
+    fixture = TestBed.createComponent(ParentSchoolComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
