@@ -46,7 +46,7 @@ export class ParentLoginComponent implements OnInit {
       localStorage.setItem('cellnumber', res);
       localStorage.setItem('Idnumber', this.parentID);
       this.myStorage = localStorage.getItem("cellnumber");
-      this.router.navigate(['/auth/parent-otp'])
+      this.router.navigate(['/auth/verify-otp'])
       } else {
         console.log("error")
         this.error = true;      }

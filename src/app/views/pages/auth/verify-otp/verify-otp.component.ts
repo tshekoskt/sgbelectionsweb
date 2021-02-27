@@ -4,17 +4,17 @@ import { FormBuilder, FormGroup } from "@angular/forms"
 import { ElectionsService } from '../../_SERVICE/elections.service';
 
 @Component({
-  selector: 'app-parent-otp',
-  templateUrl: './parent-otp.component.html',
-  styleUrls: ['./parent-otp.component.scss']
+  selector: 'app-verify-otp',
+  templateUrl: './verify-otp.component.html',
+  styleUrls: ['./verify-otp.component.scss']
 })
-export class ParentOtpComponent implements OnInit {
+export class VerifyOtpComponent implements OnInit {
 
   returnUrl: any;
   cellnumber;
   OTP;
   OTPvalid;
-  Idnumber;
+  usernumber;
   error = false;
   jsonData;
   parent;
@@ -29,9 +29,9 @@ export class ParentOtpComponent implements OnInit {
     });
 
     this.cellnumber = localStorage.getItem('cellnumber');
-    this.Idnumber = localStorage.getItem('Idnumber');
+    this.usernumber = localStorage.getItem('Idnumber');
     this.jsonData = {
-      idNumber: this.Idnumber,
+      idNumber: this.usernumber,
       mobileNo: this.cellnumber
     }
   }
@@ -40,7 +40,14 @@ export class ParentOtpComponent implements OnInit {
 
     this.OTP = this.OTPform.controls['OTP'].value;
 
-    this.OTPService.authParentOTP(this.cellnumber, this.OTP).subscribe(res => {
+    if(this.usernumber.length < 10){
+      console.log("pricipal");
+      this.router.navigate(['../../votersroll']);
+
+    } else {
+      console.log("parent");
+
+       this.OTPService.authParentOTP(this.cellnumber, this.OTP).subscribe(res => {
 
       this.OTPvalid = res;
 
@@ -60,6 +67,8 @@ export class ParentOtpComponent implements OnInit {
 
 
     })
+
+    }
 
   }
 
