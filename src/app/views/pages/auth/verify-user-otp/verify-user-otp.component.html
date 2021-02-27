@@ -1,0 +1,38 @@
+<div class="row w-100 mx-0 auth-page">
+    <div class="col-md-8 col-xl-6 mx-auto">
+      <div class="card">
+        <div class="row justify-content-center">
+          <div class="col-md-8 pl-md-0">
+            <div class="auth-form-wrapper px-4 py-5">
+              <img src="../assets/images/DepartmentEducationLogo.png " >
+              <h5 class="text-muted font-weight-normal mb-4 text-center">Voter Verification</h5>
+              <p class="text-center">Please enter your one time password(OTPs)</p>
+              <p class="text-center">From your cellphone sms</p>
+              <br>
+              <form class="forms-sample" [formGroup]="OTPform">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">One Time Password</label>
+                  <input type="text" class="form-control" required formControlName="OTP" id="OTP">
+                </div>
+                <div *ngIf="error" class="error_text">
+                  <p class="text-danger">Invalid OTP, please enter the correct OTP or go back and resend again</p>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-4">
+                    <!-- <button class="btn btn-primary" (click)="verifyOTP($event)" >Submit</button> -->
+                    <input type="button" value="Submit" (click)="verifyUserOTP()" class="btn btn-primary"/>
+                  </div>
+                  <div class="col-4">
+                    <!-- <button class="btn btn-danger" (click)="cancel()">Cancel</button> -->
+                    <input type="button" class="btn btn-danger" (click)="cancel()" value="Cancel"/>
+                  </div>
+
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

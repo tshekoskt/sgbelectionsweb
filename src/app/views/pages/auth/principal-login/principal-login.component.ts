@@ -20,7 +20,7 @@ export class PrincipalLoginComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private principal: ElectionsService, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private route: ActivatedRoute, private _principal: ElectionsService, private formBuilder: FormBuilder) { }
 
   form: FormGroup;
 
@@ -36,15 +36,14 @@ export class PrincipalLoginComponent implements OnInit {
     this.persalnumber = this.form.controls['persalnumber'].value;
     this.error = false;
 
-    
-    if(this.persalnumber  != "") {
+//     if(this.persalnumber  != "") {
 
-      localStorage.setItem('Idnumber', this.persalnumber);
-      this.router.navigate(['/auth/verify-otp']);
+//       localStorage.setItem('Idnumber', this.persalnumber);
+//       this.router.navigate(['/auth/verify-otp']);
 
-    } else {
-      this.error = true
-    }
+//     } else {
+//       this.error = true
+//     }
     
     
     // this.principal.sendOTP(this.persalnumber).subscribe((res: any) => {
@@ -62,6 +61,21 @@ export class PrincipalLoginComponent implements OnInit {
 
     // })
 
+    this._principal.sendUserOTP(this.persalnumber).subscribe((res: any) => {
+      this.response = res;
+      console.log(res.length);
+
+      if(res.length > 1){        
+      localStorage.setItem('cellnumber', res);
+      // localStorage.setItem('Persal', this.persalnumber);
+      localStorage.setItem('Idnumber', this.persalnumber);
+      this.myStorage = localStorage.getItem("cellnumber");
+      this.router.navigate(['/auth/verify-otp'])
+      } else {
+        console.log("error")
+        this.error = true;      }
+
+    })
 
   }
 

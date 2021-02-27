@@ -19,9 +19,15 @@ export class LoginComponent implements OnInit {
 
   onLoggedin(e) {
     e.preventDefault();
+    
     localStorage.setItem('isLoggedin', 'true');
     if (localStorage.getItem('isLoggedin')) {
       this.router.navigate([this.returnUrl]);
+    }
+    else
+    {
+      //Todo: Invalid message
+
     }
   }
 
