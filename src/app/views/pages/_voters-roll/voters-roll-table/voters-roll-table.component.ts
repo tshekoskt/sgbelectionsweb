@@ -16,6 +16,9 @@ export class VotersRollTableComponent implements OnInit {
   voter;
   emiscode;
 
+  public  mobileno:  string  =  "";
+  public  idnumber:  string  =  "";
+
   public data: any;
   public nominations:any;
   public dtOptions: any = {};
@@ -23,6 +26,7 @@ export class VotersRollTableComponent implements OnInit {
   basicModalCloseResult: string = '';
   nominee:any;
   votersRoll:any
+  
   nomineeEditForm: FormGroup;
   votersRollEditForm:FormGroup;
 
@@ -37,7 +41,7 @@ export class VotersRollTableComponent implements OnInit {
       institutionNameNominee: "",
       idNumberNominee: "",
       mobileNonNominee : "",
-      mobileBlackListed : ""
+      blackListedNominee : ""
 
     });
 
@@ -47,7 +51,7 @@ export class VotersRollTableComponent implements OnInit {
       institutionVottersRoll: "",
       idNumberVottersRoll: "",
       mobileNonVottersRoll : "",
-      mobileBlackListed : ""
+      mobileBlackListedVottersRoll : ""
 
     });
 
@@ -107,7 +111,9 @@ export class VotersRollTableComponent implements OnInit {
   }
 
   onSubmitNominee(){
-    
+
+    this.nominee.mobileNo = this.nomineeEditForm.controls['mobileNonNominee'].value;
+    this.nominee.idNumber = this.nomineeEditForm.controls['idNumberNominee'].value;
     this.electionService.saveVoterInformation(this.nominee);
     Swal.fire(
       'Confirmation!',

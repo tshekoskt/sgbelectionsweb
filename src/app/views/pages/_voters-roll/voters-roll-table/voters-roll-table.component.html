@@ -41,27 +41,28 @@
             <form [formGroup]="nomineeEditForm" (ngSubmit)="onSubmitNominee()">
               <div class="form-group">
                 <label for="nominationName">First Name</label>
-                <input type="text" formControlName="firstNameNominee" class="form-control" id="nominationName" placeholder="{{nominee.firstName}} ">
+                <input type="text" formControlName="firstNameNominee" class="form-control" id="firstNameNominee" placeholder="{{nominee.firstName}} ">
               </div>
               <div class="form-group"> 
                 <label for="nominationSurname">Last Name</label>
-                <input type="text" formControlName="lastNameNominee" class="form-control" id="nominationSurname" placeholder="{{nominee.lastName}} ">
+                <input type="text" formControlName="lastNameNominee" class="form-control" id="lastNameNominee" placeholder="{{nominee.lastName}} ">
               </div>
               <div class="form-group">
                 <label for="nominationSurname">Institution Name</label>
-                <input type="text" formControlName="institutionNameNominee" class="form-control" id="nominationInstitutionName" placeholder="{{nominee.institutionName}} ">
+                <input type="text" formControlName="institutionNameNominee" class="form-control" id="institutionNameNominee" placeholder="{{nominee.institutionName}} ">
               </div>
               <div class="form-group">
                 <label for="NomineeIdNumber">ID Number</label>
-                <input type="text" formControlName="idNumberNominee" class="form-control" id="NomineeIdNumber" placeholder="{{nominee.idNumber}} ">
+                <input type="text" formControlName="idNumberNominee" class="form-control" id="idNumberNominee" placeholder="{{nominee.idNumber}} ">
               </div>
               <div class="form-group">
                 <label for="NomineeMobileNo">Mobile Number</label>
-                <input type="text" formControlName="mobileNonNominee" class="form-control" id="NomineeMobileNo" placeholder="{{nominee.mobileNo}} ">
+                <input type="text" formControlName="mobileNonNominee" class="form-control" id="mobileNonNominee" placeholder="{{votersRoll.mobileNo}}">
+                
               </div>
               <div class="form-check">
                 
-                <input type="checkbox" formControlName="mobileBlackListed" [value]="nominee.blackListed" class="form-check-input" id="NomineeBlackListed" placeholder="{{nominee.blackListed}} ">
+                <input type="checkbox" formControlName="blackListedNominee" class="form-check-input" id="blackListedNominee" placeholder="{{nominee.blackListed}} ">
                 <label for="NomineeBlackListed">Is BlackListed</label>
               </div>
               <div class="modal-footer">
@@ -76,6 +77,7 @@
         <p *ngIf="basicModalCloseResult != ''" class="mt-2">{{basicModalCloseResult}}</p>
 
          <!-- Modal -->
+
          <ng-template #vorterall let-modal>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Edit Nomination</h5>
@@ -89,23 +91,24 @@
               </div>
               <div class="form-group"> 
                 <label for="nominationSurname">Last Name</label>
-                <input type="text" formControlName="lastNameVottersRoll" class="form-control" id="nominationSurname" placeholder="{{votersRoll.lastName}} ">
+                <input type="text" formControlName="lastNameVottersRoll" class="form-control" id="lastNameVottersRoll" placeholder="{{votersRoll.lastName}} ">
               </div>
               <div class="form-group">
                 <label for="nominationSurname">Institution Name</label>
-                <input type="text" formControlName="institutionVottersRoll" class="form-control" id="nominationInstitutionName" placeholder="{{votersRoll.institutionName}} ">
+                <input type="text" formControlName="institutionVottersRoll" class="form-control" id="institutionVottersRoll" placeholder="{{votersRoll.institutionName}} ">
               </div>
               <div class="form-group">
                 <label for="NomineeIdNumber">ID Number</label>
-                <input type="text" formControlName="idNumberVottersRoll" class="form-control" id="NomineeIdNumber" placeholder="{{votersRoll.idNumber}} ">
+                <input type="text" formControlName="idNumberVottersRoll" class="form-control" id="idNumberVottersRoll" placeholder="{{votersRoll.idNumber}} ">
               </div>
               <div class="form-group">
                 <label for="NomineeMobileNo">Mobile Number</label>
-                <input type="text" formControlName="mobileNonVottersRoll" class="form-control" id="NomineeMobileNo" placeholder="{{votersRoll.mobileNo}} ">
+                <input type="text" formControlName="mobileNonVottersRoll" class="form-control" id="mobileNonVottersRoll" placeholder="{{votersRoll.mobileNo}}">
+                
               </div>
               <div class="form-check">
                 
-                <input type="checkbox" formControlName="mobileBlackListed" checked={{votersRoll.blackListed}} class="form-check-input" id="NomineeBlackListed" placeholder="{{nominee.blackListed}} ">
+                <input type="checkbox" formControlName="mobileBlackListedVottersRoll" checked={{votersRoll.blackListed}} class="form-check-input" id="NomineeBlackListed" placeholder="{{nominee.blackListed}} ">
                 <label for="NomineeBlackListed">BlackListed</label>
               </div>
             </form>
@@ -115,5 +118,6 @@
             <button type="submit" class="btn btn-primary" (click)="onSubmitNominee()">Save changes</button>
           </div>
         </ng-template>
+
         <!-- Close result -->
         <p *ngIf="basicModalCloseResult != ''" class="mt-2">{{basicModalCloseResult}}</p>

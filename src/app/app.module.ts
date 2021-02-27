@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from "@angular/forms";
 import {DataTablesModule} from 'angular-datatables';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {DataTablesModule} from 'angular-datatables';
     LayoutModule,
     NgbModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule
   ],
   providers: [
     AuthGuard,
