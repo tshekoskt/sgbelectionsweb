@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { ElectionsService } from '../../_SERVICE/elections.service';
+import { Subject } from 'rxjs';
+
+// import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-voters-roll-table',
   templateUrl: './voters-roll-table.component.html',
   styleUrls: ['./voters-roll-table.component.scss']
 })
-export class VotersRollTableComponent implements OnInit {
+export class VotersRollTableComponent implements OnDestroy, OnInit {
 
   voters;
   voter;
@@ -18,7 +21,8 @@ export class VotersRollTableComponent implements OnInit {
 
   public data: any;
   public nominations:any;
-  public dtOptions: any = {};
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
   public dtOptionsNom: any = {};
   basicModalCloseResult: string = '';
   nominee:any;
@@ -30,6 +34,11 @@ export class VotersRollTableComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      processing: true
+    };
 
     this.nomineeEditForm = this.formBuilder.group({
       firstNameNominee: "",
@@ -58,17 +67,13 @@ export class VotersRollTableComponent implements OnInit {
       console.log(res);
       this.votersRoll = res;
 
+      this.dtTrigger.next();
     });
 
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 10,
-      processing: true,
-      dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'print'
-        ]
-    };
+  }
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
   }
 
   openBasicModal(content) {
