@@ -49,6 +49,7 @@
     "flag-icon-css": "^3.5.0",
     "jquery": "^3.5.1",
     "jszip": "^3.6.0",
+    "lodash": "^4.17.21",
     "metismenujs": "^1.2.1",
     "ng-apexcharts": "^1.5.8",
     "ng2-charts": "^2.4.2",

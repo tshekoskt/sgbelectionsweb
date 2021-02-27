@@ -21,7 +21,7 @@
 
 <h4 class="card-title text-primary htitle">Election Nomination</h4>
 
-<form #nomineeform="ngForm" (ngSubmit)="onSubmit(nomineeform)" novalidate>
+<form [formGroup]="form" (submit)="saveChanges()">
 
   <div class="row hform">
     <div class="col-md-5 grid-margin stretch-card">
@@ -29,25 +29,25 @@
         <div class="card-body">
           <h6 class="card-title">PROPOSE A NOMINATION</h6>
           <p class="mb-3">Please select a parent that you would like to nominate</p>
-          <form>
             <div class="row form-group">
               <div class="form-group">
 
-                <div *ngIf="nominations?.length == 0">
+                <div *ngIf="blockAArray?.length == 0">
                   There are no records to display
                 </div>
 
-                <div class="form-check" *ngFor="let parent of nominations; let i = index">
+                <div class="form-check" formArrayName="blockAList" *ngFor="let parent of blockA; let i = index">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" [checked]="parent != null" (change)="confirmBox(parent.name)" [(ngModel)]="selectedNominee" name="proposed" id="proposed">
-                    <i class="input-frame"></i>
-                    {{parent.firstName}} {{parent.lastName}}
+                    <!-- <input type="radio" class="form-check-input" [formControlName]="i" (change)="confirmBox(parent[i].firstName)" [(ngModel)]="selectedNominee"> -->
+                    <mdb-checkbox [disabled]="true">{{blockA[i].firstName}} {{blockA[i].lastName}}</mdb-checkbox>
+                    <input type="radio" class="form-check-input" [value]="i" (change)="confirmBox($event)"> 
+                    <i class="input-frame"></i> 
+                    {{blockA[i].firstName}} {{blockA[i].lastName}}
                   </label>
                 </div>
 
               </div>
             </div>
-          </form>
         </div>
       </div>
     </div>
@@ -55,33 +55,40 @@
       <div class="card">
         <div class="card-body">
           <h6 class="card-title">SECOND A NOMINATION</h6>
+           
+          
           <p class="mb-3">Please select proposed candidates whom you would like to second</p>
-          <form>
             <div class="row form-group">
               <div class="form-group">
 
-                <div *ngIf="seconded?.length == 0">
+                <div *ngIf="blockB?.length == 0">
                   There are no records to display
                 </div>
 
-                <div class="form-check" *ngFor="let parent of seconded; let i = index">
+                <div class="form-check" formArrayName="blockBList" *ngFor="let parent of blockB; let i = index">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="second" id="second">
-                    <i class="input-frame"></i>
-                    {{parent.firstName}} {{parent.lastName}}
+                    <!-- <input type="radio" class="form-check-input" [formControlName]="i" (change)="confirmBox(parent[i].firstName)" [(ngModel)]="selectedNominee"> -->
+                    <input type="radio" class="form-check-input" [value]="i" (change)="confirmSecondBox($event)">
+                    <i class="input-frame"></i> 
+                    {{blockB[i].firstName}} {{blockB[i].lastName}}
+                    <div *ngIf="blockB[i].canBeSelected == true">Your nomination</div>
                   </label>
+                  
+                 
+
                 </div>
 
               </div>
             </div>
-          </form>
         </div>
       </div>
     </div>
   </div>
 
   <div class="row hbtn ml-auto mr-auto">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="saveChanges()">Save</button>
+    &nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-danger" click="javascript:window.location.reload();">Reset</button>
     &nbsp;&nbsp;&nbsp;
     <button type="submit" class="btn btn-danger">Cancel</button>
   </div>
