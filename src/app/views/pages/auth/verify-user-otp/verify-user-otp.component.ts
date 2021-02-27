@@ -4,14 +4,15 @@ import { FormBuilder, FormGroup } from "@angular/forms"
 import { ElectionsService } from '../../_SERVICE/elections.service';
 
 @Component({
-  selector: 'app-verify-otp',
-  templateUrl: './verify-otp.component.html',
-  styleUrls: ['./verify-otp.component.scss']
+  selector: 'app-user-verify-otp',
+  templateUrl: './verify-user-otp.component.html',
+  styleUrls: ['./verify-user-otp.component.scss']
 })
-export class VerifyOtpComponent implements OnInit {
+export class VerifyUserOtpComponent implements OnInit {
 
   returnUrl: any;
   cellnumber;
+  persal;
   OTP;
   OTPvalid;
   usernumber;
@@ -30,44 +31,20 @@ export class VerifyOtpComponent implements OnInit {
 
     this.cellnumber = localStorage.getItem('cellnumber');
     this.usernumber = localStorage.getItem('Idnumber');
+    this.persal = localStorage.getItem("Persal");
     this.jsonData = {
-      idNumber: this.usernumber,
-      mobileNo: this.cellnumber
+      Persal: this.persal,
+      CellNumber: this.cellnumber
     }
   }
 
-  verifyOTP() {
+  verifyUserOTP() {
 
     this.OTP = this.OTPform.controls['OTP'].value;
 
-    if(this.usernumber.length < 10){
-      
+    if(this.persal.length < 8){
 
       console.log("pricipal");
-
-      this.OTPService.authParentOTP(this.cellnumber, this.OTP).subscribe(res => {
-
-        this.OTPvalid = res;
-
-        if (this.OTPvalid == true) {
-          this.error = false;
-
-          this.OTPService.authenticateOfficialPersal(this.jsonData).subscribe(data => {
-
-            this.parent = data
-            localStorage.setItem('ParentID', this.parent.user.parentID);
-            this.router.navigate(['../../votersroll']);
-          })
-
-        } else {
-          this.error = true;
-        }
-
-
-   })
-
-    } else {
-      console.log("parent");
 
        this.OTPService.authParentOTP(this.cellnumber, this.OTP).subscribe(res => {
 
@@ -76,7 +53,7 @@ export class VerifyOtpComponent implements OnInit {
       if (this.OTPvalid == true) {
         this.error = false;
 
-        this.OTPService.authenticateParentIDNmber(this.jsonData).subscribe(data => {
+        this.OTPService.authenticateOfficialPersal(this.jsonData).subscribe(data => {
 
           this.parent = data
           localStorage.setItem('ParentID', this.parent.user.parentID);

@@ -36,12 +36,20 @@ export class ElectionsService {
     return this.http.post(this.base_url + "/api/Login/AuthenticateParent", jsonData, { headers: this.Header })
   }
 
+  authenticateOfficialPersal(jsonData) {
+    return this.http.post(this.base_url + "/api/Login/AuthenticateOfficial", jsonData, { headers: this.Header })
+  }
+
   authParentOTP(phonenumber, otp) {
     return this.http.post(this.base_url + "/api/SMS/AuthenticateOTP?MobileNumber=" + phonenumber + "&OTP=" + otp, { headers: this.Header })
   }
 
   sendOTP(IDnumber) {
     return this.http.get(this.base_url + "/api/SMS/SendOTP?IDNumber=" + IDnumber)
+  }
+
+  sendUserOTP(persalnumber) {
+    return this.http.get(this.base_url + "/api/SMS/SendUserOTP?Persal=" + persalnumber)
   }
 
   resendOTP(id) {
