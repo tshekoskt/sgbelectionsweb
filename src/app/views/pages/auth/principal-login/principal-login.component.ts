@@ -37,7 +37,15 @@ export class PrincipalLoginComponent implements OnInit {
     this.error = false;
 
     
-    this.router.navigate(['/auth/verify-otp']);
+    if(this.persalnumber  != "") {
+
+      localStorage.setItem('Idnumber', this.persalnumber);
+      this.router.navigate(['/auth/verify-otp']);
+
+    } else {
+      this.error = true
+    }
+    
     
     // this.principal.sendOTP(this.persalnumber).subscribe((res: any) => {
     //   this.response = res;
