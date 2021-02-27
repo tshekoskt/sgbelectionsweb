@@ -39,7 +39,7 @@
                 <div class="form-check" formArrayName="blockAList" *ngFor="let parent of blockA; let i = index">
                   <label class="form-check-label">
                     <!-- <input type="radio" class="form-check-input" [formControlName]="i" (change)="confirmBox(parent[i].firstName)" [(ngModel)]="selectedNominee"> -->
-                    <mdb-checkbox [disabled]="true">{{blockA[i].firstName}} {{blockA[i].lastName}}</mdb-checkbox>
+                    
                     <input type="radio" class="form-check-input" [value]="i" (change)="confirmBox($event)"> 
                     <i class="input-frame"></i> 
                     {{blockA[i].firstName}} {{blockA[i].lastName}}
