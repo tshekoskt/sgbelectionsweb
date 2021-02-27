@@ -22,7 +22,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   principallogin(){
-    this.router.navigate(['../elections/overview'])
+    this.router.navigate(['auth/principal-login'])
 
   }
 
