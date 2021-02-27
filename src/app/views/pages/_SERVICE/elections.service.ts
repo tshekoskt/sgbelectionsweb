@@ -108,6 +108,12 @@ getNominationsToBeSecondedByEmisCode(emisCode, id) {
     return this.http.get(this.base_url + "/api/Nomination/GetScheduledNominationByEmisCode?EmisCode=" + emisCode + "&currentDate=" + date)
   }
 
+  //saveVoterInformation(idNumber,firstName,lastName,blackListed,mobileNo,parentId,emisCode){
+  saveVoterInformation(parentInfo){
+    console.log(parentInfo);
+    return this.http.patch(this.base_url +"/api/Parent/Update",parentInfo,{ headers: this.Header });
+  }
+
 
   /*
 /api/Nomination/GetScheduledInfoByEmisCode?EmisCode=

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 import { ElectionsService } from '../../_SERVICE/elections.service';
+import { Subject } from 'rxjs';
+
+// import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-voters-roll-table',
   templateUrl: './voters-roll-table.component.html',
   styleUrls: ['./voters-roll-table.component.scss']
 })
-export class VotersRollTableComponent implements OnInit {
+export class VotersRollTableComponent implements OnDestroy, OnInit {
 
   voters;
   voter;
@@ -17,7 +21,8 @@ export class VotersRollTableComponent implements OnInit {
 
   public data: any;
   public nominations:any;
-  public dtOptions: any = {};
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
   public dtOptionsNom: any = {};
   basicModalCloseResult: string = '';
   nominee:any;
@@ -29,13 +34,19 @@ export class VotersRollTableComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      processing: true
+    };
 
     this.nomineeEditForm = this.formBuilder.group({
       firstNameNominee: "",
       lastNameNominee:"",
       institutionNameNominee: "",
       idNumberNominee: "",
-      mobileNonNominee : ""
+      mobileNonNominee : "",
+      mobileBlackListed : ""
 
     });
 
@@ -44,27 +55,25 @@ export class VotersRollTableComponent implements OnInit {
       lastNameVottersRoll:"",
       institutionVottersRoll: "",
       idNumberVottersRoll: "",
-      mobileNonVottersRoll : ""
+      mobileNonVottersRoll : "",
+      mobileBlackListed : ""
 
     });
 
     this.emiscode= 700400139;
+    //this.emiscode = localStorage.getItem('EmisCode');
  
     this.electionService.getAllVotersRoll(this.emiscode).subscribe((res: any) => {
       console.log(res);
       this.votersRoll = res;
 
+      this.dtTrigger.next();
     });
 
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 10,
-      processing: true,
-      dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'print'
-        ]
-    };
+  }
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
   }
 
   openBasicModal(content) {
@@ -103,11 +112,21 @@ export class VotersRollTableComponent implements OnInit {
   }
 
   onSubmitNominee(){
-    alert();
+    
+    this.electionService.saveVoterInformation(this.nominee);
+    Swal.fire(
+      'Confirmation!',
+      'Information was saved.',
+      'success'
+    )
   }
 
   onSubmitVotersRoll(){
-    alert();
+    Swal.fire(
+      'Confirmation!',
+      'Information was saved.',
+      'success'
+    )
   }
 
     /* const dataTable = new DataTable("#dataTableExample");
