@@ -15,9 +15,12 @@ export class VerifyOtpComponent implements OnInit {
   OTP;
   OTPvalid;
   usernumber;
+  credentials;
   error = false;
   jsonData;
+  jsonUserData;
   parent;
+  official;
 
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder, private OTPService: ElectionsService) { }
 
@@ -30,9 +33,15 @@ export class VerifyOtpComponent implements OnInit {
 
     this.cellnumber = localStorage.getItem('cellnumber');
     this.usernumber = localStorage.getItem('Idnumber');
+    this.credentials = localStorage.getItem('Pass');
     this.jsonData = {
       idNumber: this.usernumber,
       mobileNo: this.cellnumber
+    }
+    this.jsonUserData = {
+      Persal: this.usernumber,
+      CellNumber: this.cellnumber,
+      Credentials: this.credentials
     }
   }
 
@@ -52,10 +61,10 @@ export class VerifyOtpComponent implements OnInit {
         if (this.OTPvalid == true) {
           this.error = false;
 
-          this.OTPService.authenticateOfficialPersal(this.jsonData).subscribe(data => {
+          this.OTPService.authenticateOfficialPersal(this.jsonUserData).subscribe(data => {
 
-            this.parent = data
-            localStorage.setItem('ParentID', this.parent.user.parentID);
+            this.official = data
+            localStorage.setItem('UserID', this.official.user.id);
             this.router.navigate(['../../votersroll']);
           })
 

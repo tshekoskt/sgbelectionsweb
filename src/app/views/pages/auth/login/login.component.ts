@@ -17,6 +17,11 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  principallogin(){
+    this.router.navigate(['auth/principal-login'])
+
+  }
+
   onLoggedin(e) {
     e.preventDefault();
     
@@ -24,11 +29,7 @@ export class LoginComponent implements OnInit {
     if (localStorage.getItem('isLoggedin')) {
       this.router.navigate([this.returnUrl]);
     }
-    else
-    {
-      //Todo: Invalid message
-
-    }
+   
   }
 
 }

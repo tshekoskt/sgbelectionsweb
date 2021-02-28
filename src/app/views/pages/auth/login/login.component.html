@@ -8,13 +8,13 @@
             <h5 class="text-muted font-weight-normal mb-4 text-center">Log in to your account.</h5>
             <form class="forms-sample">
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="admin@demo.com">
+                <label for="exampleInputEmail1">Persal</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Persal">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <a class="float-right"><label for="exampleInputPassword1">Forgot Password</label></a>
-                <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password" value="12345678">
+                <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password" >
               </div>
               <div class="row">
                 <div class="col-md-4">
@@ -29,7 +29,7 @@
                 </div> 
                 
               </div>   
-              <a routerLink="#" class="d-block mt-3 btn btn-primary text-light">Not a user? Sign up</a>
+              <a (click)="principallogin()" class="d-block mt-3 btn btn-primary text-light">Not a user? Sign up</a>
             </form>
           </div>
         </div>
