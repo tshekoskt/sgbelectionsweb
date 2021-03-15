@@ -16,7 +16,18 @@
                   <div *ngIf="error" class="error_text">
                     <p class="text-danger">Invalid Persal number please try again</p>
                   </div>
-                  
+                  <label for="Password">Password</label>
+                  <input type="password" formControlName="password" placeholder="Type here" required class="form-control" id="password" >
+                  <div *ngIf="passworderror" class="error_text">
+                    <p class="text-danger">Password must be minimum of 8 characters.</p>
+                  </div>
+
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" formControlName="confirmpassword" placeholder="Type here" required class="form-control" id="confirmpassword" >
+                  <div *ngIf="confirmerror" class="error_text">
+                    <p class="text-danger">Password and Confirm Password must be match.</p>
+                  </div>
+
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-md-4">

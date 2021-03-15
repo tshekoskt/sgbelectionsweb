@@ -13,10 +13,14 @@ export class PrincipalLoginComponent implements OnInit {
 
   returnUrl: any;
   persalnumber: any;
+  password: any;
+  confirmpassword: any;
   idnumber: any;
   myStorage: any;
   response: any;
   error;
+  passworderror;
+  confirmerror;
 
 
 
@@ -26,7 +30,9 @@ export class PrincipalLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      persalnumber: ""
+      persalnumber: "",
+      password: "",
+      confirmpassword: ""
     });
  this.error = false;
   }
@@ -34,23 +40,68 @@ export class PrincipalLoginComponent implements OnInit {
   getOtp() {
 
     this.persalnumber = this.form.controls['persalnumber'].value;
+    this.password = this.form.controls['password'].value;
+    this.confirmpassword = this.form.controls['confirmpassword'].value;
     this.error = false;
+    this.passworderror = false;
+    this.confirmerror = false;
 
-    this._principal.sendUserOTP(this.persalnumber).subscribe((res: any) => {
-      this.response = res;
-      console.log(res.length);
+//     if(this.persalnumber  != "") {
 
-      if(res.length > 1){        
-      localStorage.setItem('cellnumber', res);
-      // localStorage.setItem('Persal', this.persalnumber);
-      localStorage.setItem('Idnumber', this.persalnumber);
-      this.myStorage = localStorage.getItem("cellnumber");
-      this.router.navigate(['/auth/verify-otp'])
+//       localStorage.setItem('Idnumber', this.persalnumber);
+//       this.router.navigate(['/auth/verify-otp']);
+
+//     } else {
+//       this.error = true
+//     }
+    
+    
+    // this.principal.sendOTP(this.persalnumber).subscribe((res: any) => {
+    //   this.response = res;
+    //   console.log(res.length);
+
+    //   if(res.length > 1){        
+    //   localStorage.setItem('cellnumber', res);
+    //   localStorage.setItem('Idnumber', this.persalnumber);
+    //   this.myStorage = localStorage.getItem("cellnumber");
+    //   this.router.navigate(['/auth/verify-otp'])
+    //   } else {
+    //     console.log("error")
+    //     this.error = true;      }
+
+    // })
+
+    if (this.password.length > 8) {
+      
+      if (this.password == this.confirmpassword) {
+        
+        this._principal.sendUserOTP(this.persalnumber).subscribe((res: any) => {
+          this.response = res;
+          console.log(res.length);
+    
+          if(res.length > 1){        
+          localStorage.setItem('cellnumber', res);
+          localStorage.setItem('Idnumber', this.persalnumber);
+          localStorage.setItem('Pass', this.password);
+          this.myStorage = localStorage.getItem("cellnumber");
+          this.router.navigate(['/auth/verify-otp'])
+          } else {
+            console.log("error")
+            this.error = true;      }
+    
+        })
+
       } else {
-        console.log("error")
-        this.error = true;      }
+        console.log("confirmerror")
+        this.confirmerror = true;
+      }
 
-    })
+    } else {
+      console.log("passworderror")
+         this.passworderror = true;
+    }
+
+ 
 
   }
 
